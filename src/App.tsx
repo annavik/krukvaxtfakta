@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from './utils/colors'
-import Article from './pages/Article'
+import Library from './pages/Library'
 
 const Container = styled.div`
     width: 700px;
@@ -13,7 +13,7 @@ const Container = styled.div`
 const App: React.FC = () => {
     return (
         <Container>
-            <Article />
+            <Library />
         </Container>
     )
 }

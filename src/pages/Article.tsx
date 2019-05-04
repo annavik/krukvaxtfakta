@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading1 } from '../ui-kit/Heading1'
-import { Paragraph } from '../ui-kit/Paragraph'
-import { Heading2 } from '../ui-kit/Heading2'
-import { Label } from '../ui-kit/Label'
 import { colors } from '../utils/colors'
+import { Heading1 } from '../ui-kit/Heading1'
+import { Heading2 } from '../ui-kit/Heading2'
+import { Paragraph } from '../ui-kit/Paragraph'
+import { Label } from '../ui-kit/Label'
 
 const Section = styled.div`
     margin-bottom: 64px;
