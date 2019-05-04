@@ -1,7 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import { colors } from './utils/colors'
 import Library from './pages/Library'
+import Article from './pages/Article'
 
 const Container = styled.div`
     width: 700px;
@@ -13,7 +15,10 @@ const Container = styled.div`
 const App: React.FC = () => {
     return (
         <Container>
-            <Library />
+            <Router>
+                <Route exact path="/" component={Library} />
+                <Route path="/article" component={Article} />
+            </Router>
         </Container>
     )
 }

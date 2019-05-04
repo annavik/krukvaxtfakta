@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { Heading1 } from '../ui-kit/Heading1'
 import { Paragraph } from '../ui-kit/Paragraph'
 import { colors } from '../utils/colors'
@@ -16,7 +17,7 @@ const Row = styled.div`
     margin-bottom: 64px;
 `
 
-const ArticleLink = styled.a`
+const ArticleLink = styled(Link)`
     display: inline-block;
     margin-right: 32px;
 
@@ -37,7 +38,7 @@ const Library: React.FC = () => {
 
         const items = [...Array(numberOfItems)].map((_e, i) => {
             return (
-                <ArticleLink key={`item-${i}`} href="/article">
+                <ArticleLink key={`item-${i}`} to="/article">
                     <ListItem
                         title="Lorem ipsum dolor sit amet"
                         imageUrl="https://www.wexthuset.com/images/products/wexthuset/palettblad-stickling-durham-gala.jpg"
@@ -60,7 +61,7 @@ const Library: React.FC = () => {
     return (
         <>
             <Header>
-                <Heading1>Library</Heading1>
+                <Heading1>Bibliotek</Heading1>
                 <Paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna

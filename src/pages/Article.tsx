@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { colors } from '../utils/colors'
 import { Heading1 } from '../ui-kit/Heading1'
 import { Heading2 } from '../ui-kit/Heading2'
 import { Paragraph } from '../ui-kit/Paragraph'
 import { Label } from '../ui-kit/Label'
+import { Button } from '../ui-kit/Button'
+import { Heading3 } from '../ui-kit/Heading3'
 
 const Section = styled.div`
     margin-bottom: 64px;
@@ -19,6 +22,18 @@ const Image = styled.img`
     display: block;
     vertical-align: middle;
     margin: 0 auto;
+`
+
+const BackLinkContainer = styled.div`
+    text-align: center;
+    margin: 128px 0;
+`
+
+const BackLink = styled(Link)`
+    :hover {
+        cursor: pointer;
+        opacity: 0.8;
+    }
 `
 
 const Article: React.FC = () => {
@@ -68,10 +83,16 @@ const Article: React.FC = () => {
                 </Paragraph>
             </Section>
             <Section>
+                <Heading3>Tillhör grupperna:</Heading3>
                 <Label>Lorem ipsum</Label>
                 <Label>Lorem ipsum</Label>
                 <Label>Lorem ipsum</Label>
             </Section>
+            <BackLinkContainer>
+                <BackLink to="/">
+                    <Button title="Tillbaka" />
+                </BackLink>
+            </BackLinkContainer>
         </>
     )
 }
