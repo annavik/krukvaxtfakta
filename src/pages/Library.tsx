@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Heading1 } from '../components/ui-kit/Heading1'
 import { Paragraph } from '../components/ui-kit/Paragraph'
 import { colors } from '../utils/colors'
 import { ListItem } from '../components/ui-kit/ListItem'
+import { LibraryContext } from '../components/LibraryContext'
+import { ApiState } from '../types/common'
+import { Heading3 } from '../components/ui-kit/Heading3'
 
 const Header = styled.header`
     margin-bottom: 64px;
     border-bottom: 2px ${colors.primary} solid;
 `
 
-const Items = styled.div``
+const Items = styled.div`
+    text-align: center;
+`
 
 const Row = styled.div`
     text-align: center;
@@ -20,7 +25,7 @@ const Row = styled.div`
 
 const ArticleLink = styled(Link)`
     display: inline-block;
-    margin-right: 32px;
+    margin-right: 64px;
 
     :last-child {
         margin-right: 0;
@@ -33,16 +38,23 @@ const ArticleLink = styled(Link)`
 `
 
 const Library: React.FC = () => {
+    const { library, apiState } = useContext(LibraryContext)
+
     const renderItems = () => {
-        const numberOfItems = 14
+        if (apiState === ApiState.Active) {
+            return <Heading3>Laddar...</Heading3>
+        } else if (apiState === ApiState.Error) {
+            return <Heading3>Kunde inte hämta sorter.</Heading3>
+        }
+
         const itemsPerRow = 3
 
-        const items = [...Array(numberOfItems)].map((_e, i) => {
+        const items = library.map(cultivar => {
             return (
-                <ArticleLink key={`item-${i}`} to="/article">
+                <ArticleLink key={`cultivar-${cultivar.id}`} to="/article">
                     <ListItem
-                        title="Lorem ipsum dolor sit amet"
-                        imageUrl="https://www.wexthuset.com/images/products/wexthuset/palettblad-stickling-durham-gala.jpg"
+                        title={cultivar.title}
+                        imageUrl={cultivar.thumbnail}
                     />
                 </ArticleLink>
             )

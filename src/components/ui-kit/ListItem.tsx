@@ -20,17 +20,30 @@ const ItemImage = styled.div`
     background-image: url("${(props: ItemImageProps) =>
         props.backgroundImage}");
     background-repeat: no-repeat;
+    background-position: center;
     background-size: cover;
+`
+
+const PlaceholderImage = styled(ItemImage)`
+    background-size: 48px;
 `
 
 interface Props {
     title: string
-    imageUrl: string
+    imageUrl?: string
 }
 
-export const ListItem = ({ title, imageUrl }: Props) => (
-    <Item>
+export const ListItem = ({ title, imageUrl }: Props) => {
+    const image = imageUrl ? (
         <ItemImage backgroundImage={imageUrl} />
-        <Heading4>{title}</Heading4>
-    </Item>
-)
+    ) : (
+        <PlaceholderImage backgroundImage="assets/icons/plant.png" />
+    )
+
+    return (
+        <Item>
+            {image}
+            <Heading4>{title}</Heading4>
+        </Item>
+    )
+}

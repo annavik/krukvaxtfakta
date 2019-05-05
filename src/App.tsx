@@ -5,6 +5,7 @@ import { colors } from './utils/colors'
 import { TopBar } from './components/TopBar'
 import Library from './pages/Library'
 import Article from './pages/Article'
+import { LibraryProvider } from './components/LibraryContext'
 
 const Content = styled.div`
     width: 700px;
@@ -15,13 +16,15 @@ const Content = styled.div`
 
 const App: React.FC = () => {
     return (
-        <Router>
-            <TopBar />
-            <Content>
-                <Route exact path="/" component={Library} />
-                <Route path="/article" component={Article} />
-            </Content>
-        </Router>
+        <LibraryProvider>
+            <Router>
+                <TopBar />
+                <Content>
+                    <Route exact path="/" component={Library} />
+                    <Route path="/article" component={Article} />
+                </Content>
+            </Router>
+        </LibraryProvider>
     )
 }
 
