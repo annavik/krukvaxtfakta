@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors } from '../../utils/colors'
-import { Heading4 } from './Heading4'
+import { PlantData } from '../../../types/library'
+import { colors } from '../../../utils/colors'
+import { Heading4 } from '../../ui-kit/Heading4'
 
-const Item = styled.div`
+const Container = styled.div`
     text-align: center;
 `
 
@@ -29,21 +30,20 @@ const PlaceholderImage = styled(ItemImage)`
 `
 
 interface Props {
-    title: string
-    imageUrl?: string
+    data: PlantData
 }
 
-export const ListItem = ({ title, imageUrl }: Props) => {
-    const image = imageUrl ? (
-        <ItemImage backgroundImage={imageUrl} />
+export const PlantListItem = ({ data }: Props) => {
+    const image = data.thumbnail ? (
+        <ItemImage backgroundImage={data.thumbnail} />
     ) : (
         <PlaceholderImage backgroundImage="/assets/icons/leafs.png" />
     )
 
     return (
-        <Item>
+        <Container>
             {image}
-            <Heading4>{title}</Heading4>
-        </Item>
+            <Heading4>{data.title}</Heading4>
+        </Container>
     )
 }
