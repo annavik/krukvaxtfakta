@@ -1,7 +1,7 @@
 import React, { useReducer, useEffect } from 'react'
-import { libraryApi } from '../utils/libraryApi'
-import { CultivarData } from '../types/library'
 import { ApiState } from '../types/common'
+import { CultivarData } from '../types/library'
+import { libraryApi } from '../utils/libraryApi'
 
 interface IContext {
     library: CultivarData[]
@@ -10,7 +10,7 @@ interface IContext {
 
 export const LibraryContext = React.createContext<IContext>({
     library: [],
-    apiState: ApiState.Default,
+    apiState: ApiState.Active,
 })
 
 interface Props {
@@ -38,7 +38,7 @@ export const LibraryProvider = ({ children }: Props) => {
         },
         {
             library: [],
-            apiState: ApiState.Default,
+            apiState: ApiState.Active,
         }
     )
 
@@ -47,10 +47,6 @@ export const LibraryProvider = ({ children }: Props) => {
     }, [])
 
     const fetchLibrary = async () => {
-        if (state.apiState === ApiState.Active) {
-            return
-        }
-
         dispatch({
             type: 'setApiState',
             payload: ApiState.Active,

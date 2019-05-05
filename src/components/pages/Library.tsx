@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Heading1 } from '../components/ui-kit/Heading1'
-import { Paragraph } from '../components/ui-kit/Paragraph'
-import { colors } from '../utils/colors'
-import { ListItem } from '../components/ui-kit/ListItem'
-import { LibraryContext } from '../components/LibraryContext'
-import { ApiState } from '../types/common'
-import { Heading3 } from '../components/ui-kit/Heading3'
+import { ApiState } from '../../types/common'
+import { colors } from '../../utils/colors'
+import { LibraryContext } from '../LibraryContext'
+import { Heading1 } from '../ui-kit/Heading1'
+import { Heading3 } from '../ui-kit/Heading3'
+import { Paragraph } from '../ui-kit/Paragraph'
+import { ListItem } from '../ui-kit/ListItem'
 
 const Header = styled.header`
     margin-bottom: 64px;
@@ -19,13 +19,13 @@ const Items = styled.div`
 `
 
 const Row = styled.div`
+    display: flex;
     text-align: center;
     margin-bottom: 64px;
 `
 
 const ArticleLink = styled(Link)`
-    display: inline-block;
-    margin-right: 64px;
+    flex: 1;
 
     :last-child {
         margin-right: 0;
@@ -37,7 +37,7 @@ const ArticleLink = styled(Link)`
     }
 `
 
-const Library: React.FC = () => {
+const Library = () => {
     const { library, apiState } = useContext(LibraryContext)
 
     const renderItems = () => {
@@ -51,7 +51,10 @@ const Library: React.FC = () => {
 
         const items = library.map(cultivar => {
             return (
-                <ArticleLink key={`cultivar-${cultivar.id}`} to="/article">
+                <ArticleLink
+                    key={`cultivar-${cultivar.id}`}
+                    to={`/sort/${cultivar.id}/${cultivar.slug}`}
+                >
                     <ListItem
                         title={cultivar.title}
                         imageUrl={cultivar.thumbnail}

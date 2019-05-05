@@ -1,6 +1,7 @@
 export interface CultivarData {
     id: string
     title: string
+    slug: string
     modified: string
     thumbnail?: string
     image?: string

@@ -23,7 +23,7 @@ const LogoText = styled(Heading3)`
 export const Logo = () => {
     return (
         <Container>
-            <LogoImage src="assets/icons/plant.png" />
+            <LogoImage src="/assets/icons/plant.png" />
             <LogoText>Paletten</LogoText>
         </Container>
     )
