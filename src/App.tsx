@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { colors } from './utils/colors'
+import { TopBar } from './components/TopBar'
 import Library from './pages/Library'
 import Article from './pages/Article'
 
-const Container = styled.div`
+const Content = styled.div`
     width: 700px;
     margin: 0 auto;
     padding: 64px 32px;
@@ -14,12 +15,13 @@ const Container = styled.div`
 
 const App: React.FC = () => {
     return (
-        <Container>
-            <Router>
+        <Router>
+            <TopBar />
+            <Content>
                 <Route exact path="/" component={Library} />
                 <Route path="/article" component={Article} />
-            </Router>
-        </Container>
+            </Content>
+        </Router>
     )
 }
 

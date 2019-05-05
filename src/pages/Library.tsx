@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Heading1 } from '../ui-kit/Heading1'
-import { Paragraph } from '../ui-kit/Paragraph'
+import { Heading1 } from '../components/ui-kit/Heading1'
+import { Paragraph } from '../components/ui-kit/Paragraph'
 import { colors } from '../utils/colors'
-import { ListItem } from '../ui-kit/ListItem'
+import { ListItem } from '../components/ui-kit/ListItem'
 
 const Header = styled.header`
     margin-bottom: 64px;
@@ -14,6 +14,7 @@ const Header = styled.header`
 const Items = styled.div``
 
 const Row = styled.div`
+    text-align: center;
     margin-bottom: 64px;
 `
 
@@ -52,7 +53,7 @@ const Library: React.FC = () => {
         for (let i = 0, j = items.length; i < j; i += itemsPerRow) {
             const rowItems = items.slice(i, i + itemsPerRow)
 
-            rows = [...rows, <Row>{rowItems}</Row>]
+            rows = [...rows, <Row key={`row-${i}`}>{rowItems}</Row>]
         }
 
         return rows
@@ -61,7 +62,7 @@ const Library: React.FC = () => {
     return (
         <>
             <Header>
-                <Heading1>Bibliotek</Heading1>
+                <Heading1>Sorter</Heading1>
                 <Paragraph>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna

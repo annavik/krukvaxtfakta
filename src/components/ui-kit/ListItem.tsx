@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { colors } from '../utils/colors'
-import { Heading3 } from './Heading3'
+import { colors } from '../../utils/colors'
+import { Heading4 } from './Heading4'
 
 const Item = styled.div`
     text-align: center;
@@ -31,6 +31,6 @@ interface Props {
 export const ListItem = ({ title, imageUrl }: Props) => (
     <Item>
         <ItemImage backgroundImage={imageUrl} />
-        <Heading3>{title}</Heading3>
+        <Heading4>{title}</Heading4>
     </Item>
 )

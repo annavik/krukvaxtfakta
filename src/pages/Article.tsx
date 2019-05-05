@@ -2,12 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { colors } from '../utils/colors'
-import { Heading1 } from '../ui-kit/Heading1'
-import { Heading2 } from '../ui-kit/Heading2'
-import { Paragraph } from '../ui-kit/Paragraph'
-import { Label } from '../ui-kit/Label'
-import { Button } from '../ui-kit/Button'
-import { Heading3 } from '../ui-kit/Heading3'
+import { Heading1 } from '../components/ui-kit/Heading1'
+import { Heading2 } from '../components/ui-kit/Heading2'
+import { Heading3 } from '../components/ui-kit/Heading3'
+import { Heading4 } from '../components/ui-kit/Heading4'
+import { Paragraph } from '../components/ui-kit/Paragraph'
+import { Label } from '../components/ui-kit/Label'
+import { Button } from '../components/ui-kit/Button'
 
 const Section = styled.div`
     margin-bottom: 64px;
@@ -22,6 +23,16 @@ const Image = styled.img`
     display: block;
     vertical-align: middle;
     margin: 0 auto;
+    padding: 64px 0;
+`
+
+const UpdatedTitle = styled(Heading4)`
+    font-weight: 400;
+    margin: 0 0 24px;
+`
+
+const GroupsTitle = styled(Heading3)`
+    margin: 0 0 32px;
 `
 
 const BackLinkContainer = styled.div`
@@ -44,7 +55,7 @@ const Article: React.FC = () => {
             </Section>
             <Header>
                 <Heading1>Lorem ipsum dolor sit amet</Heading1>
-                <Paragraph>Uppdaterad 2019-05-05 08:00</Paragraph>
+                <UpdatedTitle>Uppdaterad 2019-05-05 08:00</UpdatedTitle>
             </Header>
             <Section>
                 <Heading2>Lorem ipsum dolor sit amet</Heading2>
@@ -83,7 +94,7 @@ const Article: React.FC = () => {
                 </Paragraph>
             </Section>
             <Section>
-                <Heading3>Tillhör grupperna:</Heading3>
+                <GroupsTitle>Tillhör grupperna:</GroupsTitle>
                 <Label>Lorem ipsum</Label>
                 <Label>Lorem ipsum</Label>
                 <Label>Lorem ipsum</Label>
