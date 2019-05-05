@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { colors } from './utils/colors'
 import { LibraryProvider } from './components/LibraryContext'
 import { TopBar } from './components/TopBar'
 import Library from './components/pages/Library'
 import Cultivar from './components/pages/Cultivar'
+import UnderConstruction from './components/pages/UnderConstruction'
+import NotFound from './components/pages/NotFound'
 
 const Content = styled.div`
     width: 700px;
@@ -27,8 +29,26 @@ const App: React.FC = () => {
                 <TopBar />
                 <Content>
                     <Route component={ScrollToTop} />
-                    <Route exact path="/" component={Library} />
-                    <Route path="/sort/:id/:name" component={Cultivar} />
+                    <Switch>
+                        <Route exact path="/" component={UnderConstruction} />
+                        <Route exact path="/sorter" component={Library} />
+                        <Route
+                            exact
+                            path="/sort/:id/:name"
+                            component={Cultivar}
+                        />
+                        <Route
+                            exact
+                            path="/bidra"
+                            component={UnderConstruction}
+                        />
+                        <Route
+                            exact
+                            path="/min-samling"
+                            component={UnderConstruction}
+                        />
+                        <Route component={NotFound} />
+                    </Switch>
                 </Content>
             </Router>
         </LibraryProvider>

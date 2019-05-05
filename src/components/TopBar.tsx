@@ -36,16 +36,16 @@ export const TopBar = () => {
         <Container>
             <Content>
                 <Logo />
-                <TopBarLink to="#">
+                <TopBarLink to="/">
                     <TopBarLinkText>Hem</TopBarLinkText>
                 </TopBarLink>
-                <TopBarLink to="/">
+                <TopBarLink to="/sorter">
                     <TopBarLinkText>Sorter</TopBarLinkText>
                 </TopBarLink>
-                <TopBarLink to="#">
+                <TopBarLink to="/bidra">
                     <TopBarLinkText>Bidra</TopBarLinkText>
                 </TopBarLink>
-                <TopBarLink to="#">
+                <TopBarLink to="/min-samling">
                     <TopBarLinkText>Min samling</TopBarLinkText>
                 </TopBarLink>
             </Content>

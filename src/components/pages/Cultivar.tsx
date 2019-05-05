@@ -2,29 +2,24 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { ApiState } from '../../types/common'
-import { colors } from '../../utils/colors'
 import { LibraryContext } from '../LibraryContext'
+import { Header } from '../ui-kit/Header'
 import { Heading1 } from '../ui-kit/Heading1'
 import { Heading2 } from '../ui-kit/Heading2'
 import { Heading3 } from '../ui-kit/Heading3'
 import { Heading4 } from '../ui-kit/Heading4'
 import { Paragraph } from '../ui-kit/Paragraph'
+import { Html } from '../ui-kit/Html'
 import { Label } from '../ui-kit/Label'
 import { Button } from '../ui-kit/Button'
-import { Html } from '../ui-kit/Html'
 
-const Info = styled.div`
+const CenteredContent = styled.div`
     text-align: center;
     margin: 128px 0;
 `
 
 const Section = styled.div`
     margin-bottom: 64px;
-`
-
-const Header = styled.header`
-    margin-bottom: 64px;
-    border-bottom: 2px ${colors.primary} solid;
 `
 
 const Image = styled.img`
@@ -42,11 +37,6 @@ const UpdatedTitle = styled(Heading4)`
 
 const GroupsTitle = styled(Heading2)`
     margin: 0 0 32px;
-`
-
-const BackLinkContainer = styled.div`
-    text-align: center;
-    margin: 128px 0;
 `
 
 const BackLink = styled(Link)`
@@ -69,15 +59,15 @@ const Cultivar = (props: Props) => {
 
     if (apiState === ApiState.Active) {
         return (
-            <Info>
+            <CenteredContent>
                 <Heading3>Laddar...</Heading3>
-            </Info>
+            </CenteredContent>
         )
     } else if (apiState === ApiState.Error) {
         return (
-            <Info>
+            <CenteredContent>
                 <Heading3>Kunde inte hämta sort.</Heading3>
-            </Info>
+            </CenteredContent>
         )
     }
 
@@ -86,14 +76,14 @@ const Cultivar = (props: Props) => {
 
     if (!data) {
         return (
-            <Info>
+            <CenteredContent>
                 <Heading3>Sorten kunde inte hittas.</Heading3>
-                <BackLinkContainer>
+                <CenteredContent>
                     <BackLink to="/">
                         <Button title="Tillbaka" />
                     </BackLink>
-                </BackLinkContainer>
-            </Info>
+                </CenteredContent>
+            </CenteredContent>
         )
     }
 
@@ -152,11 +142,11 @@ const Cultivar = (props: Props) => {
                 <Label>Lorem ipsum</Label>
                 <Label>Lorem ipsum</Label>
             </Section>
-            <BackLinkContainer>
+            <CenteredContent>
                 <BackLink to="/">
                     <Button title="Tillbaka" />
                 </BackLink>
-            </BackLinkContainer>
+            </CenteredContent>
         </>
     )
 }

@@ -2,17 +2,12 @@ import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { ApiState } from '../../types/common'
-import { colors } from '../../utils/colors'
 import { LibraryContext } from '../LibraryContext'
+import { Header } from '../ui-kit/Header'
 import { Heading1 } from '../ui-kit/Heading1'
 import { Heading3 } from '../ui-kit/Heading3'
 import { Paragraph } from '../ui-kit/Paragraph'
 import { ListItem } from '../ui-kit/ListItem'
-
-const Header = styled.header`
-    margin-bottom: 64px;
-    border-bottom: 2px ${colors.primary} solid;
-`
 
 const Items = styled.div`
     text-align: center;
