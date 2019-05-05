@@ -44,16 +44,13 @@ const Library = () => {
 
         const itemsPerRow = 3
 
-        const items = library.map(cultivar => {
+        const items = library.map(plant => {
             return (
                 <ArticleLink
-                    key={`cultivar-${cultivar.id}`}
-                    to={`/sort/${cultivar.id}/${cultivar.slug}`}
+                    key={`plant-${plant.id}`}
+                    to={`/sort/${plant.id}/${plant.slug}`}
                 >
-                    <ListItem
-                        title={cultivar.title}
-                        imageUrl={cultivar.thumbnail}
-                    />
+                    <ListItem title={plant.title} imageUrl={plant.thumbnail} />
                 </ArticleLink>
             )
         })

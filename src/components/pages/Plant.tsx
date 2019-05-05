@@ -54,7 +54,7 @@ interface Props {
     }
 }
 
-const Cultivar = (props: Props) => {
+const Plant = (props: Props) => {
     const { library, apiState } = useContext(LibraryContext)
 
     if (apiState === ApiState.Active) {
@@ -72,7 +72,7 @@ const Cultivar = (props: Props) => {
     }
 
     const id = props.match.params.id
-    const data = library.find(cultivar => cultivar.id === id)
+    const data = library.find(plant => plant.id === id)
 
     if (!data) {
         return (
@@ -151,4 +151,4 @@ const Cultivar = (props: Props) => {
     )
 }
 
-export default Cultivar
+export default Plant

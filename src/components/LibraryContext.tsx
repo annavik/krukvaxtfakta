@@ -1,10 +1,10 @@
 import React, { useReducer, useEffect } from 'react'
 import { ApiState } from '../types/common'
-import { CultivarData } from '../types/library'
+import { PlantData } from '../types/library'
 import { libraryApi } from '../utils/libraryApi'
 
 interface IContext {
-    library: CultivarData[]
+    library: PlantData[]
     apiState: ApiState
 }
 

@@ -5,7 +5,7 @@ import { colors } from './utils/colors'
 import { LibraryProvider } from './components/LibraryContext'
 import { TopBar } from './components/TopBar'
 import Library from './components/pages/Library'
-import Cultivar from './components/pages/Cultivar'
+import Plant from './components/pages/Plant'
 import UnderConstruction from './components/pages/UnderConstruction'
 import NotFound from './components/pages/NotFound'
 
@@ -32,11 +32,7 @@ const App: React.FC = () => {
                     <Switch>
                         <Route exact path="/" component={UnderConstruction} />
                         <Route exact path="/sorter" component={Library} />
-                        <Route
-                            exact
-                            path="/sort/:id/:name"
-                            component={Cultivar}
-                        />
+                        <Route exact path="/sort/:id/:name" component={Plant} />
                         <Route
                             exact
                             path="/bidra"

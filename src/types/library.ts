@@ -1,4 +1,4 @@
-export interface CultivarData {
+export interface PlantData {
     id: string
     title: string
     slug: string
@@ -10,5 +10,5 @@ export interface CultivarData {
 }
 
 export interface LibraryResponse {
-    data: CultivarData[]
+    data: PlantData[]
 }
