@@ -37,7 +37,7 @@ export const ListItem = ({ title, imageUrl }: Props) => {
     const image = imageUrl ? (
         <ItemImage backgroundImage={imageUrl} />
     ) : (
-        <PlaceholderImage backgroundImage="/assets/icons/plant.png" />
+        <PlaceholderImage backgroundImage="/assets/icons/leafs.png" />
     )
 
     return (

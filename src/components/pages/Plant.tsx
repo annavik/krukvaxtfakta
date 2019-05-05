@@ -79,8 +79,8 @@ const Plant = (props: Props) => {
             <CenteredContent>
                 <Heading3>Sorten kunde inte hittas.</Heading3>
                 <CenteredContent>
-                    <BackLink to="/">
-                        <Button title="Tillbaka" />
+                    <BackLink to="/sorter">
+                        <Button title="Tillbaka till sorter" />
                     </BackLink>
                 </CenteredContent>
             </CenteredContent>
@@ -143,8 +143,8 @@ const Plant = (props: Props) => {
                 <Label>Lorem ipsum</Label>
             </Section>
             <CenteredContent>
-                <BackLink to="/">
-                    <Button title="Tillbaka" />
+                <BackLink to="/sorter">
+                    <Button title="Tillbaka till sorter" />
                 </BackLink>
             </CenteredContent>
         </>
