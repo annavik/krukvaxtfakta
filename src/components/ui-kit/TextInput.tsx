@@ -9,10 +9,11 @@ const Input = styled.input`
     box-sizing: border-box;
     display: block;
     width: 100%;
+    height: 44px;
     background: ${colors.bg};
     border: 1px ${colors.gray} solid;
     border-radius: 4px;
-    padding: 8px 16px;
+    padding: 0 16px;
     margin: 0;
     font-family: 'EB Garamond', serif;
     font-size: 21px;

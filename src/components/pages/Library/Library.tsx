@@ -7,6 +7,7 @@ import { Heading1 } from '../../ui-kit/Heading1'
 import { Heading3 } from '../../ui-kit/Heading3'
 import { Paragraph } from '../../ui-kit/Paragraph'
 import { TextInput } from '../../ui-kit/TextInput'
+import Dropdown from '../../ui-kit/Dropdown'
 import PlantList from './PlantList'
 
 const Content = styled.div`
@@ -14,14 +15,27 @@ const Content = styled.div`
 `
 
 const SearchContainer = styled.div`
-    text-align: left;
+    display: flex;
     margin-bottom: 64px;
+`
+
+const Column = styled.div`
+    flex: 1;
+
+    :first-child {
+        margin-right: 16px;
+    }
+
+    :last-child {
+        margin-left: 16px;
+    }
 `
 
 const Library = () => {
     const { library, apiState } = useContext(LibraryContext)
 
-    const [searchValue, setSearchValue] = useState('')
+    const [searchValue, setSearchValue] = useState<string>()
+    const [groupValue, setGroupValue] = useState<string>()
 
     const renderContent = () => {
         if (apiState === ApiState.Active) {
@@ -33,11 +47,23 @@ const Library = () => {
         return (
             <>
                 <SearchContainer>
-                    <TextInput
-                        placeholder="Sök"
-                        value={searchValue}
-                        onChange={setSearchValue}
-                    />
+                    <Column>
+                        <TextInput
+                            placeholder="Sök"
+                            value={searchValue}
+                            onChange={setSearchValue}
+                        />
+                    </Column>
+                    <Column>
+                        <Dropdown
+                            options={[
+                                { title: 'Alla sorter', value: 'all' },
+                                { title: 'Main Street', value: 'main-street' },
+                            ]}
+                            selectedValue={groupValue}
+                            onSelect={setGroupValue}
+                        />
+                    </Column>
                 </SearchContainer>
                 <PlantList plants={library} searchValue={searchValue} />
             </>
