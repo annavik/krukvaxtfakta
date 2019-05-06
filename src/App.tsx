@@ -40,7 +40,7 @@ const App: React.FC = () => {
                         />
                         <Route
                             exact
-                            path="/min-samling"
+                            path="/onskelista"
                             component={UnderConstruction}
                         />
                         <Route component={NotFound} />

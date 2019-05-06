@@ -45,8 +45,8 @@ export const TopBar = () => {
                 <TopBarLink to="/bidra">
                     <TopBarLinkText>Bidra</TopBarLinkText>
                 </TopBarLink>
-                <TopBarLink to="/min-samling">
-                    <TopBarLinkText>Min samling</TopBarLinkText>
+                <TopBarLink to="/onskelista">
+                    <TopBarLinkText>Önskelista</TopBarLinkText>
                 </TopBarLink>
             </Content>
         </Container>
