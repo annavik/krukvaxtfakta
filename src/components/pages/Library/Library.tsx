@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { ApiState } from '../../../types/common'
 import { LibraryContext } from '../../LibraryContext'
 import { Header } from '../../ui-kit/Header'
@@ -9,6 +10,8 @@ import { Paragraph } from '../../ui-kit/Paragraph'
 import { TextInput } from '../../ui-kit/TextInput'
 import Dropdown from '../../ui-kit/Dropdown'
 import PlantList from './PlantList'
+import { colors } from '../../../utils/colors'
+import { Button } from '../../ui-kit/Button'
 
 const Content = styled.div`
     text-align: center;
@@ -29,6 +32,11 @@ const Column = styled.div`
     :last-child {
         margin-left: 16px;
     }
+`
+
+const ContributeLink = styled(Link)`
+    display: block;
+    margin: 32px 0;
 `
 
 const Library = () => {
@@ -82,10 +90,15 @@ const Library = () => {
             <Header>
                 <Heading1>Sorter</Heading1>
                 <Paragraph>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
+                    Detta är ett bibliotek med olika sorters palettblad som vi
+                    tillsammans hjälps åt att skapa. Vi försöker hålla oss till
+                    fröäkta sorter. Saknas någon sort, vet du mer om någon
+                    befintlig eller ser något som inte stämmer? Dela gärna med
+                    dig, alla bidrag är uppskattade!
                 </Paragraph>
+                <ContributeLink to="/bidra">
+                    <Button title="Bidra" />
+                </ContributeLink>
             </Header>
             <Content>{renderContent()}</Content>
         </>

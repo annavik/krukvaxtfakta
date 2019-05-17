@@ -16,11 +16,6 @@ const ArticleLink = styled(Link)`
     :last-child {
         margin-right: 0;
     }
-
-    :hover {
-        cursor: pointer;
-        opacity: 0.8;
-    }
 `
 
 interface Props {

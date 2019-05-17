@@ -23,7 +23,6 @@ const Image = styled.img`
     display: block;
     vertical-align: middle;
     margin: 0 auto;
-    padding: 64px 0;
     max-height: 320px;
 `
 
@@ -34,13 +33,6 @@ const UpdatedTitle = styled(Heading4)`
 
 const GroupsTitle = styled(Heading2)`
     margin: 0 0 32px;
-`
-
-const BackLink = styled(Link)`
-    :hover {
-        cursor: pointer;
-        opacity: 0.8;
-    }
 `
 
 interface Props {
@@ -76,9 +68,9 @@ const Plant = (props: Props) => {
             <CenteredContent>
                 <Heading3>Sorten kunde inte hittas.</Heading3>
                 <CenteredContent>
-                    <BackLink to="/sorter">
+                    <Link to="/sorter">
                         <Button title="Tillbaka till sorter" />
-                    </BackLink>
+                    </Link>
                 </CenteredContent>
             </CenteredContent>
         )
@@ -140,9 +132,9 @@ const Plant = (props: Props) => {
                 <Label>Lorem ipsum</Label>
             </Section>
             <CenteredContent>
-                <BackLink to="/sorter">
+                <Link to="/sorter">
                     <Button title="Tillbaka till sorter" />
-                </BackLink>
+                </Link>
             </CenteredContent>
         </>
     )

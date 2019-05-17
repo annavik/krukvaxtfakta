@@ -20,11 +20,6 @@ const Content = styled.div`
 
 const TopBarLink = styled(Link)`
     margin: 0 32px 0 0;
-
-    :hover {
-        cursor: pointer;
-        opacity: 0.8;
-    }
 `
 
 const TopBarLinkText = styled(Heading4)`
