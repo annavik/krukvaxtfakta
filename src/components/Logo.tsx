@@ -24,7 +24,7 @@ export const Logo = () => {
     return (
         <Container>
             <LogoImage src="/assets/icons/plant.png" />
-            <LogoText>Paletten</LogoText>
+            <LogoText>Palettplatsen</LogoText>
         </Container>
     )
 }

@@ -12,14 +12,11 @@ import { Paragraph } from '../ui-kit/Paragraph'
 import { Html } from '../ui-kit/Html'
 import { Label } from '../ui-kit/Label'
 import { Button } from '../ui-kit/Button'
+import { Section } from '../ui-kit/Section'
 
 const CenteredContent = styled.div`
     text-align: center;
     margin: 128px 0;
-`
-
-const Section = styled.div`
-    margin-bottom: 64px;
 `
 
 const Image = styled.img`

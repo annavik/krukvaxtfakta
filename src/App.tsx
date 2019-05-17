@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { colors } from './utils/colors'
 import { LibraryProvider } from './components/LibraryContext'
 import { TopBar } from './components/TopBar'
+import Home from './components/pages/Home'
 import Library from './components/pages/Library/Library'
 import Plant from './components/pages/Plant'
 import UnderConstruction from './components/pages/UnderConstruction'
@@ -30,9 +31,14 @@ const App: React.FC = () => {
                 <Content>
                     <Route component={ScrollToTop} />
                     <Switch>
-                        <Route exact path="/" component={UnderConstruction} />
+                        <Route exact path="/" component={Home} />
                         <Route exact path="/sorter" component={Library} />
                         <Route exact path="/sort/:id/:name" component={Plant} />
+                        <Route
+                            exact
+                            path="/grupper"
+                            component={UnderConstruction}
+                        />
                         <Route
                             exact
                             path="/bidra"

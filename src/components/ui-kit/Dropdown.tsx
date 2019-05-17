@@ -16,7 +16,7 @@ const Select = styled.div`
     border-radius: 4px;
 `
 
-const Option = styled.div`
+const OptionBase = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,16 +31,17 @@ const Option = styled.div`
 
     :hover {
         cursor: pointer;
+    }
+`
+
+const Option = styled(OptionBase)`
+    :hover {
         background-color: ${colors.lightGray};
     }
 `
 
-const SelectedOption = styled(Option)`
+const SelectedOption = styled(OptionBase)`
     border-top: none;
-
-    :hover {
-        background-color: ${colors.bg};
-    }
 `
 
 const Arrow = styled.span`

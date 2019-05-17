@@ -57,8 +57,15 @@ const Library = () => {
                     <Column>
                         <Dropdown
                             options={[
-                                { title: 'Alla sorter', value: 'all' },
-                                { title: 'Main Street', value: 'main-street' },
+                                { title: 'Alla färger', value: 'all' },
+                                { title: 'Lila', value: 'purpule' },
+                                { title: 'Rosa', value: 'pink' },
+                                { title: 'Röda', value: 'red' },
+                                { title: 'Orange', value: 'orange' },
+                                { title: 'Gula', value: 'yellow' },
+                                { title: 'Gröna', value: 'green' },
+                                { title: 'Gröna', value: 'green' },
+                                { title: 'Multicolor', value: 'multi' },
                             ]}
                             selectedValue={groupValue}
                             onSelect={setGroupValue}
