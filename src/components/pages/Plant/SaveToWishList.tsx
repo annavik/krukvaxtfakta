@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Clickable } from '../../ui-kit/Clickable'
+import { colors } from '../../../utils/colors'
 import {
     Wishlist,
     getWishlist,
@@ -8,9 +8,13 @@ import {
     saveToWishlist,
     removeFromWishlist,
 } from '../../../utils/wishlist'
+import { Clickable } from '../../ui-kit/Clickable'
 import { Label } from '../../ui-kit/Label'
 
 const Container = styled.div`
+    position: absolute;
+    bottom: 0;
+    right: 0;
     margin: 0 0 24px;
 `
 
@@ -21,8 +25,9 @@ const WishlistButton = styled(Clickable)`
 `
 
 const Text = styled(Label)`
+    color: ${colors.primary};
     font-weight: 600;
-    margin: 0;
+    margin: 0 8px 0 0;
 `
 
 const Image = styled.img`
@@ -30,7 +35,6 @@ const Image = styled.img`
     vertical-align: middle;
     width: 24px;
     height: 24px;
-    margin-right: 8px;
 `
 
 interface Props {
@@ -51,8 +55,8 @@ const SaveToWishlist = ({ plantId }: Props) => {
                         setWishlist(updatedWishlist)
                     }}
                 >
-                    <Image src="/assets/icons/heart-filled.png" />
                     <Text>Sparad i önskelista</Text>
+                    <Image src="/assets/icons/heart-filled.png" />
                 </WishlistButton>
             </Container>
         )
@@ -66,8 +70,8 @@ const SaveToWishlist = ({ plantId }: Props) => {
                     setWishlist(updatedWishlist)
                 }}
             >
-                <Image src="/assets/icons/heart.png" />
                 <Text>Spara i önskelista</Text>
+                <Image src="/assets/icons/heart.png" />
             </WishlistButton>
         </Container>
     )
