@@ -22,10 +22,9 @@ const Home = () => (
                 Kan du inte så mycket om palettblad, men vill veta mer, har du
                 också kommit rätt. Palettblad är enkla att odla, både från frön
                 och från sticklingar. De visar direkt när de inte är nöjda,
-                vilket är toppen om du råkar ha lite glömska tendenser när det
-                gäller växter. Med lite kärlek kan de på rätt så kort tid få
-                otroliga blad i flera färger och mönster. Ta dig en titt i
-                biblioteket med de olika sorterna!
+                vilket är toppen om du kan vara lite glömsk. Med lite kärlek kan
+                de på rätt så kort tid få otroliga blad i flera färger och
+                mönster. Ta dig en titt i biblioteket med de olika sorterna!
             </Paragraph>
         </Section>
         <Section>

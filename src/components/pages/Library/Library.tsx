@@ -89,10 +89,10 @@ const Library = () => {
             <Header>
                 <Heading1>Sorter</Heading1>
                 <Paragraph>
-                    Det här är ett bibliotek, skapat av oss alla tillsammans,
-                    med olika sorters palettblad. Saknas någon sort, vet du mer
-                    om någon befintlig eller ser något som inte stämmer? Dela
-                    gärna med dig! Alla bidrag är uppskattade.
+                    Det här är ett bibliotek för olika sorters palettblad där
+                    alla kan hjälpa till och bidra. Saknas någon sort, vet du
+                    mer om någon befintlig eller ser något som inte stämmer?
+                    Dela gärna med dig, alla bidrag är uppskattade!
                 </Paragraph>
                 <ContributeLink to="/bidra">
                     <SolidButton title="Bidra" />
