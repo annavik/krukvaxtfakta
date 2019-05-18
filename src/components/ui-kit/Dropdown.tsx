@@ -59,7 +59,7 @@ interface Props {
     onSelect: (value: string) => void
 }
 
-const Dropdown = ({ options, selectedValue, onSelect }: Props) => {
+export const Dropdown = ({ options, selectedValue, onSelect }: Props) => {
     const componentRef = useRef<HTMLDivElement>(null)
 
     const [isOpen, setIsOpen] = useState(false)
@@ -114,5 +114,3 @@ const Dropdown = ({ options, selectedValue, onSelect }: Props) => {
         </Container>
     )
 }
-
-export default Dropdown

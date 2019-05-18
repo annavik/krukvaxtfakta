@@ -7,11 +7,10 @@ import { Header } from '../../ui-kit/Header'
 import { Heading1 } from '../../ui-kit/Heading1'
 import { Heading3 } from '../../ui-kit/Heading3'
 import { Paragraph } from '../../ui-kit/Paragraph'
-import { TextInput } from '../../ui-kit/TextInput'
-import Dropdown from '../../ui-kit/Dropdown'
-import PlantList from './PlantList'
-import { colors } from '../../../utils/colors'
 import { Button } from '../../ui-kit/Button'
+import { TextInput } from '../../ui-kit/TextInput'
+import { Dropdown } from '../../ui-kit/Dropdown'
+import PlantList from './PlantList'
 
 const Content = styled.div`
     text-align: center;
@@ -90,11 +89,10 @@ const Library = () => {
             <Header>
                 <Heading1>Sorter</Heading1>
                 <Paragraph>
-                    Detta är ett bibliotek med olika sorters palettblad som vi
-                    tillsammans hjälps åt att skapa. Vi försöker hålla oss till
-                    fröäkta sorter. Saknas någon sort, vet du mer om någon
-                    befintlig eller ser något som inte stämmer? Dela gärna med
-                    dig, alla bidrag är uppskattade!
+                    Det här är ett bibliotek, skapat av oss alla tillsammans,
+                    med olika sorters palettblad. Saknas någon sort, vet du mer
+                    om någon befintlig eller ser något som inte stämmer? Dela
+                    gärna med dig! Alla bidrag är uppskattade.
                 </Paragraph>
                 <ContributeLink to="/bidra">
                     <Button title="Bidra" />

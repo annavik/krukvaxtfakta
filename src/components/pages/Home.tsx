@@ -5,7 +5,7 @@ import { Heading1 } from '../ui-kit/Heading1'
 import { Heading2 } from '../ui-kit/Heading2'
 import { Paragraph } from '../ui-kit/Paragraph'
 import { Anchor } from '../ui-kit/Anchor'
-import { Section } from '../ui-kit/Section';
+import { Section } from '../ui-kit/Section'
 
 const Home = () => (
     <>
@@ -13,52 +13,58 @@ const Home = () => (
             <Heading1>Hej och välkommen!</Heading1>
         </Header>
         <Section>
-        <Paragraph>
-            Kan du inte få nog av palettblad? Då har du kommit rätt! Det här är
-            en plats för oss som vill drömma oss bort bland alla vackra sorter,
-            och kanske även bidra med texter och bilder.
-        </Paragraph>
-        <Paragraph>
-            Kan du inte så mycket om palettblad, men vill veta mer, har du också
-            kommit rätt. Palettblad är enkla att odla, både från frön och från
-            sticklingar. Med lite ompyssling kan de på kort tid få otroliga blad
-            i flera färger och mönster. Ta dig en titt bland sorterna!
-        </Paragraph>
+            <Paragraph>
+                Kan du inte få nog av palettblad? Då har du kommit rätt! Det här
+                är en plats för oss som älskar att drömma oss bort bland alla
+                vackra sorter.
+            </Paragraph>
+            <Paragraph>
+                Kan du inte så mycket om palettblad, men vill veta mer, har du
+                också kommit rätt. Palettblad är enkla att odla, både från frön
+                och från sticklingar. De visar direkt när de inte är nöjda,
+                vilket är toppen om du råkar ha lite glömska tendenser när det
+                gäller växter. Med lite kärlek kan de på rätt så kort tid få
+                otroliga blad i flera färger och mönster. Ta dig en titt i
+                biblioteket med de olika sorterna!
+            </Paragraph>
         </Section>
         <Section>
-        <Row>
-            <Column>
-                <Heading2>Lite länkar</Heading2>
-                <Paragraph>
-                    På{' '}
-                    <Anchor href="https://www.plantagen.se/palettblad.html">
-                        Plantagen
-                    </Anchor>{' '}
-                    finns bra information om hur du tar hand om dina paletter.
-                </Paragraph>
-                <Paragraph>
-                    <Anchor href="https://www.wexthuset.coml">Wexthuset</Anchor>{' '}
-                    har ett stort utbud av fröer och olika odlingstillbehör.
-                </Paragraph>
-                <Paragraph>
-                    På Facebook finns grupper med andra palettbladstokiga. Där
-                    kan du ställa frågor, kanske byta till dig en stickling, ta
-                    del av andras samligar och lära dig massor! Två stora
-                    grupper är{' '}
-                    <Anchor href="https://www.facebook.com/groups/1873268369557231/">
-                        Palettbladsgäris
-                    </Anchor>{' '}
-                    (för kvinnor och ickebinära) och{' '}
-                    <Anchor href="https://www.facebook.com/groups/700210806749371/">
-                        Palettblad / Coleus
-                    </Anchor>
-                    .
-                </Paragraph>
-            </Column>
-            <Column>
-                <Image src="/assets/image-01.png" />
-            </Column>
-        </Row>
+            <Row>
+                <Column>
+                    <Heading2>Lite länkar</Heading2>
+                    <Paragraph>
+                        På{' '}
+                        <Anchor href="https://www.plantagen.se/palettblad.html">
+                            Plantagen
+                        </Anchor>{' '}
+                        finns bra information om hur du tar hand om dina
+                        paletter.
+                    </Paragraph>
+                    <Paragraph>
+                        <Anchor href="https://www.wexthuset.coml">
+                            Wexthuset
+                        </Anchor>{' '}
+                        har ett stort utbud av fröer och olika odlingstillbehör.
+                    </Paragraph>
+                    <Paragraph>
+                        På Facebook finns grupper med andra palettbladstokiga.
+                        Där kan du ställa frågor, kanske byta till dig en
+                        stickling, ta del av andras samligar och lära dig
+                        massor! Två stora grupper är{' '}
+                        <Anchor href="https://www.facebook.com/groups/1873268369557231/">
+                            Palettbladsgäris
+                        </Anchor>{' '}
+                        (för kvinnor och ickebinära) och{' '}
+                        <Anchor href="https://www.facebook.com/groups/700210806749371/">
+                            Palettblad / Coleus
+                        </Anchor>
+                        .
+                    </Paragraph>
+                </Column>
+                <Column>
+                    <Image src="/assets/image-01.png" />
+                </Column>
+            </Row>
         </Section>
     </>
 )

@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { colors } from './utils/colors'
 import { LibraryProvider } from './components/LibraryContext'
 import { TopBar } from './components/TopBar'
+import { Footer } from './components/Footer'
 import Home from './components/pages/Home'
 import Library from './components/pages/Library/Library'
 import Plant from './components/pages/Plant'
@@ -14,7 +14,6 @@ const Content = styled.div`
     width: 700px;
     margin: 0 auto;
     padding: 64px 32px;
-    background-color: ${colors.bg};
 `
 
 const App: React.FC = () => {
@@ -52,6 +51,7 @@ const App: React.FC = () => {
                         <Route component={NotFound} />
                     </Switch>
                 </Content>
+                <Footer />
             </Router>
         </LibraryProvider>
     )
