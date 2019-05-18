@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { PlantData } from '../../../types/library'
 import { colors } from '../../../utils/colors'
-import { Heading4 } from '../../ui-kit/Heading4'
+import { Label } from '../../ui-kit/Label'
 
 const Container = styled.div`
     text-align: center;
@@ -43,7 +43,7 @@ export const PlantListItem = ({ data }: Props) => {
     return (
         <Container>
             {image}
-            <Heading4>{data.title}</Heading4>
+            <Label>{data.title}</Label>
         </Container>
     )
 }

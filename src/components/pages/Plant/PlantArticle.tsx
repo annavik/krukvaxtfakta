@@ -1,14 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 import { PlantData } from '../../../types/library'
+import { Section } from '../../ui-kit/Section'
 import { Header } from '../../ui-kit/Header'
 import { Heading1 } from '../../ui-kit/Heading1'
 import { Heading2 } from '../../ui-kit/Heading2'
-import { Heading4 } from '../../ui-kit/Heading4'
+import { Label } from '../../ui-kit/Label'
 import { Paragraph } from '../../ui-kit/Paragraph'
 import { Html } from '../../ui-kit/Html'
-import { Label } from '../../ui-kit/Label'
-import { Section } from '../../ui-kit/Section'
+import { GroupLabel } from './GroupLabel'
 import BackToLibrary from './BackToLibrary'
 import SaveToWishlist from './SaveToWishList'
 
@@ -19,7 +19,7 @@ const Image = styled.img`
     max-height: 320px;
 `
 
-const UpdatedTitle = styled(Heading4)`
+const UpdatedTitle = styled(Label)`
     font-weight: 400;
     margin: 0 0 24px;
 `
@@ -42,7 +42,7 @@ const PlantArticle = ({ data }: Props) => (
         <Header>
             <Heading1>{data.title}</Heading1>
             <UpdatedTitle>Uppdaterad {data.modified}</UpdatedTitle>
-            <SaveToWishlist />
+            <SaveToWishlist plantId={data.id} />
         </Header>
         <Section>
             <Heading2>Kännetecken</Heading2>
@@ -60,9 +60,9 @@ const PlantArticle = ({ data }: Props) => (
         )}
         <Section>
             <GroupsTitle>Tillhör grupperna:</GroupsTitle>
-            <Label>Lorem ipsum</Label>
-            <Label>Lorem ipsum</Label>
-            <Label>Lorem ipsum</Label>
+            <GroupLabel>Lorem ipsum</GroupLabel>
+            <GroupLabel>Lorem ipsum</GroupLabel>
+            <GroupLabel>Lorem ipsum</GroupLabel>
         </Section>
         <BackToLibrary />
     </>

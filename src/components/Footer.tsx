@@ -1,10 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { colors } from '../utils/colors'
-import { Heading4 } from './ui-kit/Heading4'
-import { Paragraph } from './ui-kit/Paragraph'
 import { Anchor } from './ui-kit/Anchor'
+import { Label } from './ui-kit/Label'
 
 const Container = styled.div`
     background-color: ${colors.lightGray};
@@ -30,11 +28,8 @@ const Info = styled.div`
     margin-left: 32px;
 `
 
-const Span = styled.span`
-    display: block;
-    font-size: 15px;
-    line-height: 120%;
-    margin-bottom: 16px;
+const InfoText = styled(Label)`
+    font-weight: 400;
 
     :last-child {
         margin-bottom: 0;
@@ -47,14 +42,14 @@ export const Footer = () => {
             <Content>
                 <Image src="/assets/image-02.png" />
                 <Info>
-                    <Span>
+                    <InfoText>
                         Kod och design av Anna Viklund.{' '}
                         <Anchor href="mailto:annamariaviklund@gmail.com">
                             Kontakta mig
                         </Anchor>{' '}
                         om du har frågor om sidan!
-                    </Span>
-                    <Span>
+                    </InfoText>
+                    <InfoText>
                         Ikoner av{' '}
                         <Anchor href="https://www.flaticon.com/authors/pixel-perfect">
                             Pixel Perfect
@@ -64,14 +59,14 @@ export const Footer = () => {
                             www.flaticon.com
                         </Anchor>
                         .
-                    </Span>
-                    <Span>
+                    </InfoText>
+                    <InfoText>
                         Tack till{' '}
                         <Anchor href="https://www.wexthuset.com">
                             Wexthuset
                         </Anchor>{' '}
                         som har lånat ut bilder på sorter!
-                    </Span>
+                    </InfoText>
                 </Info>
             </Content>
         </Container>

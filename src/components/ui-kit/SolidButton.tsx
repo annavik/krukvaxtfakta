@@ -2,10 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../../utils/colors'
 
+interface StyleProps {
+    disabled?: boolean
+}
+
 export const Container = styled.div`
     display: inline-flex;
     align-items: center;
-    background: ${colors.primary};
+    background: ${({ disabled }: StyleProps) =>
+        disabled ? colors.lightGray : colors.primary};
     border-radius: 4px;
     font-size: 15px;
     line-height: 120%;
@@ -15,7 +20,7 @@ export const Container = styled.div`
 `
 
 export const Text = styled.span`
-    color: ${colors.bg};
+    color: ${({ disabled }: StyleProps) => (disabled ? colors.fg : colors.bg)};
     font-size: 15px;
     line-height: 120%;
     font-weight: 600;
@@ -23,10 +28,11 @@ export const Text = styled.span`
 
 interface Props {
     title: string
+    disabled?: boolean
 }
 
-export const SolidButton = ({ title }: Props) => (
-    <Container>
-        <Text>{title}</Text>
+export const SolidButton = ({ title, disabled }: Props) => (
+    <Container disabled={disabled}>
+        <Text disabled={disabled}>{title}</Text>
     </Container>
 )
