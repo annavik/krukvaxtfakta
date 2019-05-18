@@ -6,7 +6,7 @@ import { TopBar } from './components/TopBar'
 import { Footer } from './components/Footer'
 import Home from './components/pages/Home'
 import Library from './components/pages/Library/Library'
-import Plant from './components/pages/Plant'
+import Plant from './components/pages/Plant/Plant'
 import UnderConstruction from './components/pages/UnderConstruction'
 import NotFound from './components/pages/NotFound'
 

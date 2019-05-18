@@ -7,7 +7,7 @@ import { Header } from '../../ui-kit/Header'
 import { Heading1 } from '../../ui-kit/Heading1'
 import { Heading3 } from '../../ui-kit/Heading3'
 import { Paragraph } from '../../ui-kit/Paragraph'
-import { Button } from '../../ui-kit/Button'
+import { SolidButton } from '../../ui-kit/SolidButton'
 import { TextInput } from '../../ui-kit/TextInput'
 import { Dropdown } from '../../ui-kit/Dropdown'
 import PlantList from './PlantList'
@@ -95,7 +95,7 @@ const Library = () => {
                     gärna med dig! Alla bidrag är uppskattade.
                 </Paragraph>
                 <ContributeLink to="/bidra">
-                    <Button title="Bidra" />
+                    <SolidButton title="Bidra" />
                 </ContributeLink>
             </Header>
             <Content>{renderContent()}</Content>
