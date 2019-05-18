@@ -76,55 +76,31 @@ const Plant = (props: Props) => {
         )
     }
 
-    const renderImageSection = () => {
-        if (data.image) {
-            return (
+    return (
+        <>
+            {data.image && (
                 <Section>
                     <Image src={data.image} />
                 </Section>
-            )
-        }
-
-        return null
-    }
-
-    const renderCharacteristicsSection = () => {
-        const content = data.characteristics ? (
-            <Html content={data.characteristics} />
-        ) : (
-            <Paragraph>Information saknas.</Paragraph>
-        )
-
-        return (
-            <Section>
-                <Heading2>Kännetecken</Heading2>
-                {content}
-            </Section>
-        )
-    }
-
-    const renderFactsSection = () => {
-        if (!data.facts) {
-            return null
-        }
-
-        return (
-            <Section>
-                <Heading2>Övrigt</Heading2>
-                <Html content={data.facts} />
-            </Section>
-        )
-    }
-
-    return (
-        <>
-            {renderImageSection()}
+            )}
             <Header>
                 <Heading1>{data.title}</Heading1>
                 <UpdatedTitle>Uppdaterad {data.modified}</UpdatedTitle>
             </Header>
-            {renderCharacteristicsSection()}
-            {renderFactsSection()}
+            <Section>
+                <Heading2>Kännetecken</Heading2>
+                {data.characteristics ? (
+                    <Html content={data.characteristics} />
+                ) : (
+                    <Paragraph>Information saknas.</Paragraph>
+                )}
+            </Section>
+            {data.facts && (
+                <Section>
+                    <Heading2>Övrigt</Heading2>
+                    <Html content={data.facts} />
+                </Section>
+            )}
             <Section>
                 <GroupsTitle>Tillhör grupperna:</GroupsTitle>
                 <Label>Lorem ipsum</Label>
