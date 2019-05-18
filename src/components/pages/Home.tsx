@@ -40,7 +40,7 @@ const Home = () => (
                         paletter.
                     </Paragraph>
                     <Paragraph>
-                        <Anchor href="https://www.wexthuset.coml">
+                        <Anchor href="https://www.wexthuset.com">
                             Wexthuset
                         </Anchor>{' '}
                         har ett stort utbud av fröer och olika odlingstillbehör.
