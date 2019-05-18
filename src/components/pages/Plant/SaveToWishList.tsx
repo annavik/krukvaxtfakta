@@ -25,9 +25,9 @@ const WishlistButton = styled(Clickable)`
 `
 
 const Text = styled(Label)`
-    color: ${colors.primary};
-    font-weight: 600;
-    margin: 0 8px 0 0;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0 12px 0 0;
 `
 
 const Image = styled.img`

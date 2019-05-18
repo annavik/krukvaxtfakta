@@ -12,9 +12,6 @@ export const Container = styled.div`
     background: ${({ disabled }: StyleProps) =>
         disabled ? colors.lightGray : colors.primary};
     border-radius: 4px;
-    font-size: 15px;
-    line-height: 120%;
-    font-weight: 600;
     height: 40px;
     padding: 0 32px;
 `
