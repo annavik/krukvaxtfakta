@@ -52,8 +52,8 @@ const Wishlist = () => {
             <Header>
                 <Heading1>Önskelista</Heading1>
                 <Paragraph>
-                    Man kan aldrig få för många palettblad! Här är dom sorter du
-                    har sparat i önskelistan.
+                    Man kan aldrig få för många palettblad! Här är sorterna i
+                    din önskelista.
                 </Paragraph>
             </Header>
             <Section>{renderContent()}</Section>

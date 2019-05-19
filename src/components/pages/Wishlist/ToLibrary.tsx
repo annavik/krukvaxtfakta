@@ -11,7 +11,7 @@ const Container = styled.div`
 const ToLibrary = () => (
     <Container>
         <Link to="/sorter">
-            <SolidButton title="Hitta fler sorter" />
+            <SolidButton title="Till sorter" />
         </Link>
     </Container>
 )

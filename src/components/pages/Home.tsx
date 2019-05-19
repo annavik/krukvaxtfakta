@@ -15,16 +15,15 @@ const Home = () => (
         <Section>
             <Paragraph>
                 Kan du inte få nog av palettblad? Då har du kommit rätt! Det här
-                är en plats för oss som älskar att drömma oss bort bland alla
-                vackra sorter.
+                är en plats där du kan drömma dig bort bland alla vackra sorter.
             </Paragraph>
             <Paragraph>
                 Kan du inte så mycket om palettblad, men vill veta mer, har du
                 också kommit rätt. Palettblad är enkla att odla, både från frön
                 och från sticklingar. De visar direkt när de inte är nöjda,
-                vilket är toppen om du kan vara lite glömsk. Med lite kärlek kan
-                de på rätt så kort tid få otroliga blad i flera färger och
-                mönster. Ta dig en titt i biblioteket med de olika sorterna!
+                vilket är toppen om du är lite glömsk. Med lite kärlek kan de på
+                rätt så kort tid få otroliga blad i flera färger och mönster. Ta
+                dig en titt i biblioteket med de olika sorterna!
             </Paragraph>
         </Section>
         <Section>
@@ -36,14 +35,18 @@ const Home = () => (
                         <Anchor href="https://www.plantagen.se/palettblad.html">
                             Plantagen
                         </Anchor>{' '}
-                        finns bra information om hur du tar hand om dina
-                        paletter.
+                        finns information om hur du tar hand om dina paletter.
                     </Paragraph>
                     <Paragraph>
                         <Anchor href="https://www.wexthuset.com">
                             Wexthuset
                         </Anchor>{' '}
                         har ett stort utbud av fröer och olika odlingstillbehör.
+                        Där finns också{' '}
+                        <Anchor href="https://www.wexthuset.com/fakta-och-rad/skotselrad-om-vaxter-i-kruka-och-tradgard/beskrivning-av-krukvaxter-odling-och-forokning/skotselrad-sticklingar-palettblad-coleus">
+                            fakta och tips
+                        </Anchor>{' '}
+                        om palettblad.
                     </Paragraph>
                     <Paragraph>
                         På Facebook finns grupper med andra palettbladstokiga.
