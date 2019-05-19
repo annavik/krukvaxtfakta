@@ -91,9 +91,9 @@ const Library = () => {
                 <Paragraph>
                     Något av det bästa med palettblad är att det finns så många
                     olika sorter. Det här är ett bibliotek där vi tillsammans
-                    försöker kartlägga de namngivna varianterna som finns.
-                    Saknas någon sort, vet du mer om någon befintlig eller ser
-                    något som inte stämmer? Bidra gärna med dina kunskaper!
+                    försöker kartlägga de namngivna varianter som finns. Saknas
+                    någon sort, vet du mer om en befintlig eller ser något som
+                    inte stämmer? Bidra gärna med dina kunskaper!
                 </Paragraph>
                 <ContributeLink to="/bidra">
                     <SolidButton title="Bidra" />
