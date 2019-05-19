@@ -1,11 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { Header } from '../ui-kit/Header'
+import { Section } from '../ui-kit/Section'
 import { Heading1 } from '../ui-kit/Heading1'
 import { Heading2 } from '../ui-kit/Heading2'
 import { Paragraph } from '../ui-kit/Paragraph'
 import { Anchor } from '../ui-kit/Anchor'
-import { Section } from '../ui-kit/Section'
+import { colors } from '../../utils/colors'
+
+const Row = styled.div`
+    display: flex;
+`
+
+const Column = styled.div`
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    :first-child {
+        margin-right: 32px;
+    }
+
+    :last-child {
+        margin-left: 32px;
+    }
+`
+
+const Image = styled.img`
+    display: block;
+    vertical-align: middle;
+    max-width: 100%;
+`
+
+const LibraryLink = styled(Link)`
+    color: ${colors.primary};
+`
 
 const Home = () => (
     <>
@@ -23,7 +54,8 @@ const Home = () => (
                 och från sticklingar. De visar direkt när de inte är nöjda,
                 vilket är toppen om du är lite glömsk. Med lite kärlek kan de på
                 rätt så kort tid få otroliga blad i flera färger och mönster. Ta
-                dig en titt i biblioteket med de olika sorterna!
+                dig en titt bland{' '}
+                <LibraryLink to="/sorter">sorterna</LibraryLink>!
             </Paragraph>
         </Section>
         <Section>
@@ -70,30 +102,5 @@ const Home = () => (
         </Section>
     </>
 )
-
-const Row = styled.div`
-    display: flex;
-`
-
-const Column = styled.div`
-    flex: 1 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-    :first-child {
-        margin-right: 32px;
-    }
-
-    :last-child {
-        margin-left: 32px;
-    }
-`
-
-const Image = styled.img`
-    display: block;
-    vertical-align: middle;
-    max-width: 100%;
-`
 
 export default Home
