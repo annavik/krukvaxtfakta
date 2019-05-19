@@ -1,14 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { PlantData } from '../../../types/library'
+import { colors } from '../../../utils/colors'
 import { Section } from '../../ui-kit/Section'
 import { Header } from '../../ui-kit/Header'
 import { Heading1 } from '../../ui-kit/Heading1'
 import { Heading2 } from '../../ui-kit/Heading2'
 import { Label } from '../../ui-kit/Label'
 import { Paragraph } from '../../ui-kit/Paragraph'
+import { SolidButton } from '../../ui-kit/SolidButton'
 import { Html } from '../../ui-kit/Html'
-import { GroupLabel } from './GroupLabel'
 import SaveToWishlist from './SaveToWishList'
 
 const ImageContainer = styled.div`
@@ -30,7 +32,21 @@ const UpdatedTitle = styled(Label)`
     margin: 0 0 24px;
 `
 
-const GroupsTitle = styled(Heading2)`
+const ContributeSection = styled(Section)`
+    text-align: center;
+`
+
+const ContributeContainer = styled.div`
+    display: inline-block;
+    padding: 32px;
+    background: ${colors.lightGray};
+    border-radius: 4px;
+`
+
+const ContributeText = styled.span`
+    display: block;
+    font-size: 15px;
+    line-height: 120%;
     margin: 0 0 32px;
 `
 
@@ -66,12 +82,16 @@ const PlantArticle = ({ data }: Props) => (
                 <Html content={data.facts} />
             </Section>
         )}
-        <Section>
-            <GroupsTitle>Tillhör grupperna:</GroupsTitle>
-            <GroupLabel>Lorem ipsum</GroupLabel>
-            <GroupLabel>Lorem ipsum</GroupLabel>
-            <GroupLabel>Lorem ipsum</GroupLabel>
-        </Section>
+        <ContributeSection>
+            <ContributeContainer>
+                <ContributeText>
+                    Vet du mer om {data.title} eller ser något som inte stämmer?
+                </ContributeText>
+                <Link to="/bidra">
+                    <SolidButton title="Dela med dig!" />
+                </Link>
+            </ContributeContainer>
+        </ContributeSection>
     </>
 )
 

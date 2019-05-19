@@ -1,12 +1,12 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import styled from 'styled-components'
-import { SolidButton } from '../../ui-kit/SolidButton'
 import { Clickable } from '../../ui-kit/Clickable'
+import { BorderButton } from '../../ui-kit/BorderButton'
 
 const Container = styled.div`
     text-align: center;
-    margin: 128px 0;
+    margin: 64px 0;
 `
 
 interface Props {
@@ -18,7 +18,7 @@ interface Props {
 const Back = (props: Props) => (
     <Container>
         <Clickable onClick={() => props.history.goBack()}>
-            <SolidButton title="Tillbaka" />
+            <BorderButton title="Tillbaka" />
         </Clickable>
     </Container>
 )

@@ -3,7 +3,6 @@ import { ApiState } from '../../../types/common'
 import { LibraryContext } from '../../LibraryContext'
 import { Message } from '../../ui-kit/Message'
 import PlantArticle from './PlantArticle'
-import Back from './Back'
 
 interface Props {
     match: {
@@ -13,14 +12,7 @@ interface Props {
     }
 }
 
-const Plant = (props: Props) => (
-    <>
-        <PlantContent {...props} />
-        <Back />
-    </>
-)
-
-const PlantContent = (props: Props) => {
+const Plant = (props: Props) => {
     const { library, apiState } = useContext(LibraryContext)
 
     if (apiState === ApiState.Active) {

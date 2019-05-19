@@ -13,6 +13,7 @@ import NotFound from './components/pages/NotFound'
 
 const Content = styled.div`
     width: 700px;
+    min-height: 320px;
     margin: 0 auto;
     padding: 64px 32px;
 `

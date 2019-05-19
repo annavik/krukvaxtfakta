@@ -27,7 +27,12 @@ const Wishlist = () => {
 
     const renderContent = () => {
         if (wishlist.length === 0) {
-            return <Message title="Inga sorter sparade." />
+            return (
+                <>
+                    <Message title="Inga sorter sparade." />
+                    <ToLibrary />
+                </>
+            )
         } else if (apiState === ApiState.Active) {
             return <Message title="Laddar..." />
         } else if (apiState === ApiState.Error) {
@@ -52,12 +57,11 @@ const Wishlist = () => {
             <Header>
                 <Heading1>Önskelista</Heading1>
                 <Paragraph>
-                    Man kan aldrig få för många palettblad! Här är sorterna i
-                    din önskelista.
+                    Man kan aldrig få för många palettblad! Här är sorterna du
+                    har sparat i din önskelista.
                 </Paragraph>
             </Header>
             <Section>{renderContent()}</Section>
-            <ToLibrary />
         </>
     )
 }
