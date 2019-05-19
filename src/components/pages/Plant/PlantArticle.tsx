@@ -9,14 +9,20 @@ import { Label } from '../../ui-kit/Label'
 import { Paragraph } from '../../ui-kit/Paragraph'
 import { Html } from '../../ui-kit/Html'
 import { GroupLabel } from './GroupLabel'
-import BackToLibrary from './BackToLibrary'
 import SaveToWishlist from './SaveToWishList'
+
+const ImageContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 320px;
+    overflow: hidden;
+`
 
 const Image = styled.img`
     display: block;
     vertical-align: middle;
-    margin: 0 auto;
-    max-height: 320px;
+    max-height: 100%;
 `
 
 const UpdatedTitle = styled(Label)`
@@ -36,7 +42,9 @@ const PlantArticle = ({ data }: Props) => (
     <>
         {data.image && (
             <Section>
-                <Image src={data.image} />
+                <ImageContainer>
+                    <Image src={data.image} />
+                </ImageContainer>
             </Section>
         )}
         <Header>
@@ -64,7 +72,6 @@ const PlantArticle = ({ data }: Props) => (
             <GroupLabel>Lorem ipsum</GroupLabel>
             <GroupLabel>Lorem ipsum</GroupLabel>
         </Section>
-        <BackToLibrary />
     </>
 )
 

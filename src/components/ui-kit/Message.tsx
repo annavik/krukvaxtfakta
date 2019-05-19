@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading3 } from '../../ui-kit/Heading3'
-import BackToLibrary from './BackToLibrary'
+import { Heading3 } from './Heading3'
 
 const Container = styled.div`
     text-align: center;
@@ -12,11 +11,8 @@ interface Props {
     title: string
 }
 
-const PlantMessage = ({ title }: Props) => (
+export const Message = ({ title }: Props) => (
     <Container>
         <Heading3>{title}</Heading3>
-        <BackToLibrary />
     </Container>
 )
-
-export default PlantMessage

@@ -7,6 +7,7 @@ import { Footer } from './components/Footer'
 import Home from './components/pages/Home'
 import Library from './components/pages/Library/Library'
 import Plant from './components/pages/Plant/Plant'
+import Wishlist from './components/pages/Wishlist/Wishlist'
 import UnderConstruction from './components/pages/UnderConstruction'
 import NotFound from './components/pages/NotFound'
 
@@ -35,19 +36,10 @@ const App: React.FC = () => {
                         <Route exact path="/sort/:id/:name" component={Plant} />
                         <Route
                             exact
-                            path="/grupper"
-                            component={UnderConstruction}
-                        />
-                        <Route
-                            exact
                             path="/bidra"
                             component={UnderConstruction}
                         />
-                        <Route
-                            exact
-                            path="/onskelista"
-                            component={UnderConstruction}
-                        />
+                        <Route exact path="/onskelista" component={Wishlist} />
                         <Route component={NotFound} />
                     </Switch>
                 </Content>

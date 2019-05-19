@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import { ApiState } from '../../../types/common'
 import { LibraryContext } from '../../LibraryContext'
 import { Header } from '../../ui-kit/Header'
+import { Message } from '../../ui-kit/Message'
 import { Heading1 } from '../../ui-kit/Heading1'
-import { Heading3 } from '../../ui-kit/Heading3'
 import { Paragraph } from '../../ui-kit/Paragraph'
 import { SolidButton } from '../../ui-kit/SolidButton'
 import { TextInput } from '../../ui-kit/TextInput'
@@ -46,9 +46,9 @@ const Library = () => {
 
     const renderContent = () => {
         if (apiState === ApiState.Active) {
-            return <Heading3>Laddar...</Heading3>
+            return <Message title="Laddar..." />
         } else if (apiState === ApiState.Error) {
-            return <Heading3>Kunde inte hämta sorter.</Heading3>
+            return <Message title="Kunde inte hämta sorter." />
         }
 
         return (
