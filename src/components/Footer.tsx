@@ -30,6 +30,7 @@ const Info = styled.div`
 
 const InfoText = styled(Label)`
     font-weight: 400;
+    line-height: 150%;
 
     :last-child {
         margin-bottom: 0;
@@ -43,7 +44,8 @@ export const Footer = () => {
                 <Image src="/assets/image-02.png" />
                 <Info>
                     <InfoText>
-                        Kod och design av Anna Viklund.{' '}
+                        Kod och design av Anna Viklund 2019.
+                        <br />
                         <Anchor href="mailto:annamariaviklund@gmail.com">
                             Kontakta mig
                         </Anchor>{' '}
