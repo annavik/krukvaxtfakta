@@ -27,7 +27,7 @@ const Wishlist = () => {
 
     const renderContent = () => {
         if (wishlist.length === 0) {
-            return <Message title="Inga sorter sparade än." />
+            return <Message title="Inga sorter sparade." />
         } else if (apiState === ApiState.Active) {
             return <Message title="Laddar..." />
         } else if (apiState === ApiState.Error) {
@@ -71,9 +71,6 @@ const ListItem = styled.li`
     list-style: none;
     padding: 0;
     margin: 0 0 16px;
-    font-family: 'EB Garamond', serif;
-    font-size: 21px;
-    line-height: 150%;
 
     :last-child {
         margin: 0;
@@ -83,17 +80,19 @@ const ListItem = styled.li`
 const ArticleLink = styled(Link)`
     display: flex;
     align-items: center;
+    font-size: 21px;
+    line-height: 32px;
 
     :before {
         content: '';
         display: block;
-        width: 16px;
-        height: 16px;
+        width: 32px;
+        height: 32px;
         background-image: url('/assets/icons/leaf.png');
         background-repeat: no-repeat;
         background-position: center;
-        background-size: contain;
-        margin-right: 16px;
+        background-size: 16px;
+        margin-right: 8px;
     }
 `
 
