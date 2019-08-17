@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { PlantData } from '../../../types/library'
+import { Color, PlantData } from '../../../types/library'
 import { PlantListItem } from './PlantListItem'
 
 const Row = styled.div`
@@ -21,19 +21,26 @@ const ArticleLink = styled(Link)`
 interface Props {
     plants: PlantData[]
     searchValue?: string
+    colorFilter?: Color
 }
 
-const PlantList = ({ plants, searchValue }: Props) => {
+const PlantList = ({ plants, searchValue, colorFilter }: Props) => {
     const renderItems = () => {
         const itemsPerRow = 3
 
-        const filtered = searchValue
-            ? plants.filter(plant => {
-                  return plant.title
-                      .toLowerCase()
-                      .includes(searchValue.toLowerCase())
-              })
-            : plants
+        let filtered = plants
+
+        if (searchValue) {
+            filtered = filtered.filter(plant =>
+                plant.title.toLowerCase().includes(searchValue.toLowerCase())
+            )
+        }
+
+        if (colorFilter) {
+            filtered = plants.filter(
+                plant => plant.colors.indexOf(colorFilter) !== -1
+            )
+        }
 
         const items = filtered.map(plant => {
             return (

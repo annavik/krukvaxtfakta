@@ -1,7 +1,8 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { ApiState } from '../../../types/common'
+import { Color } from '../../../types/library'
 import { LibraryContext } from '../../LibraryContext'
 import { Header } from '../../ui-kit/Header'
 import { Message } from '../../ui-kit/Message'
@@ -38,11 +39,15 @@ const ContributeLink = styled(Link)`
     margin: 32px 0;
 `
 
+const noFilter = 'no-filter'
+
 const Library = () => {
     const { library, apiState } = useContext(LibraryContext)
 
     const [searchValue, setSearchValue] = useState<string>()
-    const [groupValue, setGroupValue] = useState<string>()
+    const [colorFilter, setColorFilter] = useState<string>()
+
+    useEffect(() => {}, [colorFilter])
 
     const renderContent = () => {
         if (apiState === ApiState.Active) {
@@ -64,22 +69,30 @@ const Library = () => {
                     <Column>
                         <Dropdown
                             options={[
-                                { title: 'Alla färger', value: 'all' },
-                                { title: 'Lila', value: 'purpule' },
-                                { title: 'Rosa', value: 'pink' },
-                                { title: 'Röda', value: 'red' },
-                                { title: 'Orange', value: 'orange' },
-                                { title: 'Gula', value: 'yellow' },
-                                { title: 'Gröna', value: 'green' },
-                                { title: 'Gröna', value: 'green' },
-                                { title: 'Multicolor', value: 'multi' },
+                                { title: 'Alla färger', value: noFilter },
+                                { title: 'Lila', value: Color.Purple },
+                                { title: 'Rosa', value: Color.Pink },
+                                { title: 'Röda', value: Color.Red },
+                                { title: 'Orange', value: Color.Orange },
+                                { title: 'Gula', value: Color.Yellow },
+                                { title: 'Gröna', value: Color.Green },
+                                { title: 'Svarta', value: Color.Black },
+                                { title: 'Multicolor', value: Color.Multi },
                             ]}
-                            selectedValue={groupValue}
-                            onSelect={setGroupValue}
+                            selectedValue={colorFilter}
+                            onSelect={setColorFilter}
                         />
                     </Column>
                 </SearchContainer>
-                <PlantList plants={library} searchValue={searchValue} />
+                <PlantList
+                    plants={library}
+                    searchValue={searchValue}
+                    colorFilter={
+                        colorFilter !== noFilter
+                            ? (colorFilter as Color)
+                            : undefined
+                    }
+                />
             </>
         )
     }
@@ -89,11 +102,10 @@ const Library = () => {
             <Header>
                 <Heading1>Sorter</Heading1>
                 <Paragraph>
-                    Något av det bästa med palettblad är att det finns så många
-                    olika sorter. Det här är ett bibliotek där vi tillsammans
-                    försöker kartlägga de namngivna varianter som finns. Saknas
-                    någon sort, vet du mer om en befintlig eller ser något som
-                    inte stämmer? Bidra gärna med dina kunskaper!
+                    Det här är ett bibliotek där vi tillsammans listar olika
+                    krukväxter och samlar skötselråd och fakta. Saknas du någon
+                    sort, vet du mer om en befintlig eller ser något som inte
+                    stämmer? Bidra gärna med dina kunskaper!
                 </Paragraph>
                 <ContributeLink to="/bidra">
                     <SolidButton title="Bidra" />
