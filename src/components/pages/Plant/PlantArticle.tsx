@@ -11,6 +11,7 @@ import { Label } from '../../ui-kit/Label'
 import { Paragraph } from '../../ui-kit/Paragraph'
 import { SolidButton } from '../../ui-kit/SolidButton'
 import { Html } from '../../ui-kit/Html'
+import { Anchor } from '../../ui-kit/Anchor'
 import SaveToWishlist from './SaveToWishList'
 import Factbox from './Factbox'
 
@@ -26,6 +27,13 @@ const Image = styled.img`
     display: block;
     vertical-align: middle;
     max-height: 100%;
+`
+
+const ImageCred = styled(Label)`
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+    margin: 8px 0 24px 0;
 `
 
 const UpdatedTitle = styled(Label)`
@@ -63,17 +71,25 @@ interface Props {
     data: PlantData
 }
 
-const PlantArticle = ({ data }: Props) => (
+const PlantArticle = ({ data, data: { image: imageData } }: Props) => (
     <>
-        {data.image && (
+        {imageData.image && (
             <Section>
                 <ImageContainer>
-                    <Image src={data.image} />
+                    <Image src={imageData.image} />
                 </ImageContainer>
+                {imageData.photographer && (
+                    <ImageCred>
+                        Foto:{' '}
+                        <Anchor href={imageData.photographerLink}>
+                            {imageData.photographer}
+                        </Anchor>
+                    </ImageCred>
+                )}
             </Section>
         )}
         <Header>
-            <Heading1>{data.title}</Heading1>
+            <Heading1>{data.name}</Heading1>
             <UpdatedTitle>Uppdaterad {data.modified}</UpdatedTitle>
             <SaveToWishlist plantId={data.id} />
         </Header>
@@ -93,13 +109,13 @@ const PlantArticle = ({ data }: Props) => (
             <Html content={placeholderContent} />
         </Section>
         <Section>
-            <Heading2>Mer om {data.title}</Heading2>
+            <Heading2>Mer om {data.name}</Heading2>
             <Html content={data.facts || placeholderContent} />
         </Section>
         <ContributeSection>
             <ContributeContainer>
                 <ContributeText>
-                    Vet du mer om {data.title} eller ser något som inte stämmer?
+                    Vet du mer om {data.name} eller ser något som inte stämmer?
                 </ContributeText>
                 <Link to="/bidra">
                     <SolidButton title="Dela med dig!" />

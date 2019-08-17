@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { ApiState } from '../../../types/common'
-import { Color } from '../../../types/library'
+import { Group } from '../../../types/library'
 import { LibraryContext } from '../../LibraryContext'
 import { Header } from '../../ui-kit/Header'
 import { Message } from '../../ui-kit/Message'
@@ -45,9 +45,9 @@ const Library = () => {
     const { library, apiState } = useContext(LibraryContext)
 
     const [searchValue, setSearchValue] = useState<string>()
-    const [colorFilter, setColorFilter] = useState<string>()
+    const [groupFilter, setGroupFilter] = useState<string>()
 
-    useEffect(() => {}, [colorFilter])
+    useEffect(() => {}, [groupFilter])
 
     const renderContent = () => {
         if (apiState === ApiState.Active) {
@@ -69,27 +69,25 @@ const Library = () => {
                     <Column>
                         <Dropdown
                             options={[
-                                { title: 'Alla färger', value: noFilter },
-                                { title: 'Lila', value: Color.Purple },
-                                { title: 'Rosa', value: Color.Pink },
-                                { title: 'Röda', value: Color.Red },
-                                { title: 'Orange', value: Color.Orange },
-                                { title: 'Gula', value: Color.Yellow },
-                                { title: 'Gröna', value: Color.Green },
-                                { title: 'Svarta', value: Color.Black },
-                                { title: 'Multicolor', value: Color.Multi },
+                                { title: 'Alla grupper', value: noFilter },
+                                {
+                                    title: 'Blommande växter',
+                                    value: Group.Group1,
+                                },
+                                { title: 'Gröna växter', value: Group.Group2 },
+                                { title: 'Suckulenter', value: Group.Group3 },
                             ]}
-                            selectedValue={colorFilter}
-                            onSelect={setColorFilter}
+                            selectedValue={groupFilter}
+                            onSelect={setGroupFilter}
                         />
                     </Column>
                 </SearchContainer>
                 <PlantList
                     plants={library}
                     searchValue={searchValue}
-                    colorFilter={
-                        colorFilter !== noFilter
-                            ? (colorFilter as Color)
+                    groupFilter={
+                        groupFilter !== noFilter
+                            ? (groupFilter as Group)
                             : undefined
                     }
                 />

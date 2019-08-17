@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Color, PlantData } from '../../../types/library'
+import { PlantData, Group } from '../../../types/library'
 import { PlantListItem } from './PlantListItem'
 
 const Row = styled.div`
@@ -21,10 +21,10 @@ const ArticleLink = styled(Link)`
 interface Props {
     plants: PlantData[]
     searchValue?: string
-    colorFilter?: Color
+    groupFilter?: Group
 }
 
-const PlantList = ({ plants, searchValue, colorFilter }: Props) => {
+const PlantList = ({ plants, searchValue, groupFilter }: Props) => {
     const renderItems = () => {
         const itemsPerRow = 3
 
@@ -32,13 +32,13 @@ const PlantList = ({ plants, searchValue, colorFilter }: Props) => {
 
         if (searchValue) {
             filtered = filtered.filter(plant =>
-                plant.title.toLowerCase().includes(searchValue.toLowerCase())
+                plant.name.toLowerCase().includes(searchValue.toLowerCase())
             )
         }
 
-        if (colorFilter) {
+        if (groupFilter) {
             filtered = plants.filter(
-                plant => plant.colors.indexOf(colorFilter) !== -1
+                plant => plant.groups.indexOf(groupFilter) !== -1
             )
         }
 

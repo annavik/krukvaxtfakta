@@ -33,6 +33,7 @@ const Row = styled.div`
     align-items: center;
     justify-content: center;
     max-width: 100%;
+    height: 24px;
     margin-bottom: 16px;
 
     :last-child {
@@ -42,7 +43,6 @@ const Row = styled.div`
 
 const Title = styled(Label)`
     display: block;
-    line-height: 24px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -70,47 +70,80 @@ interface Props {
     data: PlantData
 }
 
-const Factbox = ({ data }: Props) => (
-    <Container>
-        <Column>
-            <Row>
-                <Title>Namn:</Title>
-            </Row>
-            <Row>
-                <Title>Botaniskt namn:</Title>
-            </Row>
-            <Row>
-                <Title>Svårighetsgrad:</Title>
-            </Row>
-            <Row>
-                <Title>Vattning:</Title>
-            </Row>
-            <Row>
-                <Title>Ljus:</Title>
-            </Row>
-        </Column>
-        <Column>
-            <Row>
-                <Text>{data.title}</Text>
-            </Row>
-            <Row>
-                <Text>Lorem ipsum dolor sit amet</Text>
-            </Row>
-            <Row>
-                <Text>Enkel</Text>
-            </Row>
-            <Row>
-                <Icon src="/assets/icons/water.png" />
-                <Icon src="/assets/icons/water.png" disabled />
-                <Icon src="/assets/icons/water.png" disabled />
-            </Row>
-            <Row>
-                <Icon src="/assets/icons/sun.png" />
-                <Icon src="/assets/icons/sun.png" />
-                <Icon src="/assets/icons/sun.png" disabled />
-            </Row>
-        </Column>
-    </Container>
-)
+const Factbox = ({ data }: Props) => {
+    const renderDifficulty = () => {
+        switch (data.difficulty) {
+            case 0:
+                return 'Lätt'
+            case 1:
+                return 'Medel'
+            case 2:
+                return 'Svår'
+            default:
+                return 'Okänd'
+        }
+    }
+
+    return (
+        <Container>
+            <Column>
+                <Row>
+                    <Title>Namn:</Title>
+                </Row>
+                <Row>
+                    <Title>Botaniskt namn:</Title>
+                </Row>
+                <Row>
+                    <Title>Svårighetsgrad:</Title>
+                </Row>
+                <Row>
+                    <Title>Vattning:</Title>
+                </Row>
+                <Row>
+                    <Title>Ljus:</Title>
+                </Row>
+            </Column>
+            <Column>
+                <Row>
+                    <Text>{data.name}</Text>
+                </Row>
+                <Row>
+                    <Text>{data.botanicalName}</Text>
+                </Row>
+                <Row>
+                    <Text>{renderDifficulty()}</Text>
+                </Row>
+                <Row>
+                    <Icon
+                        src="/assets/icons/water.png"
+                        disabled={data.watering < 0}
+                    />
+                    <Icon
+                        src="/assets/icons/water.png"
+                        disabled={data.watering < 1}
+                    />
+                    <Icon
+                        src="/assets/icons/water.png"
+                        disabled={data.watering < 2}
+                    />
+                </Row>
+                <Row>
+                    <Icon
+                        src="/assets/icons/sun.png"
+                        disabled={data.light < 0}
+                    />
+                    <Icon
+                        src="/assets/icons/sun.png"
+                        disabled={data.light < 1}
+                    />
+                    <Icon
+                        src="/assets/icons/sun.png"
+                        disabled={data.light < 2}
+                    />
+                </Row>
+            </Column>
+        </Container>
+    )
+}
 
 export default Factbox

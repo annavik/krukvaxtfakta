@@ -44,7 +44,7 @@ const Wishlist = () => {
                 {plants.map(plant => (
                     <ListItem key={`wishlist-item-${plant.id}`}>
                         <ArticleLink to={`/sort/${plant.id}/${plant.slug}`}>
-                            {plant.title}
+                            {plant.name}
                         </ArticleLink>
                     </ListItem>
                 ))}

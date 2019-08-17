@@ -34,8 +34,8 @@ interface Props {
 }
 
 export const PlantListItem = ({ data }: Props) => {
-    const image = data.thumbnail ? (
-        <ItemImage backgroundImage={data.thumbnail} />
+    const image = data.image.thumbnail ? (
+        <ItemImage backgroundImage={data.image.thumbnail} />
     ) : (
         <PlaceholderImage backgroundImage="/assets/icons/leafs.png" />
     )
@@ -43,7 +43,7 @@ export const PlantListItem = ({ data }: Props) => {
     return (
         <Container>
             {image}
-            <Label>{data.title}</Label>
+            <Label>{data.name}</Label>
         </Container>
     )
 }
