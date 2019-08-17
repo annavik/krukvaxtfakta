@@ -62,13 +62,6 @@ export const Footer = () => {
                         </Anchor>
                         .
                     </InfoText>
-                    <InfoText>
-                        Tack till{' '}
-                        <Anchor href="https://www.wexthuset.com">
-                            Wexthuset
-                        </Anchor>{' '}
-                        som har lånat ut bilder på sorter!
-                    </InfoText>
                 </Info>
             </Content>
         </Container>

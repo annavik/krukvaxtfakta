@@ -7,7 +7,7 @@ import { Heading1 } from '../ui-kit/Heading1'
 import { Heading2 } from '../ui-kit/Heading2'
 import { Paragraph } from '../ui-kit/Paragraph'
 import { Anchor } from '../ui-kit/Anchor'
-import { colors } from '../../utils/colors'
+import { SolidButton } from '../ui-kit/SolidButton'
 
 const Row = styled.div`
     display: flex;
@@ -35,7 +35,8 @@ const Image = styled.img`
 `
 
 const LibraryLink = styled(Link)`
-    color: ${colors.primary};
+    display: block;
+    margin: 48px 0;
 `
 
 const Home = () => (
@@ -45,54 +46,43 @@ const Home = () => (
         </Header>
         <Section>
             <Paragraph>
-                Kan du inte få nog av palettblad? Då har du kommit rätt! Det här
-                är en plats där du kan drömma dig bort bland alla vackra sorter.
+                Kan du inte få nog av krukväxter? Då har du kommit rätt! Det här
+                är en plats där du kan drömma dig bort bland alla härliga sorter
+                och lära sig mer om hur du bäst tar hand om dina växter.
             </Paragraph>
-            <Paragraph>
-                Kan du inte så mycket om palettblad, men vill veta mer, har du
-                också kommit rätt. Palettblad är enkla att odla, både från frön
-                och från sticklingar. De visar direkt när de inte är nöjda,
-                vilket är toppen om du är lite glömsk. Med lite kärlek kan de på
-                rätt så kort tid få otroliga blad i flera färger och mönster. Ta
-                dig en titt bland{' '}
-                <LibraryLink to="/sorter">sorterna</LibraryLink>!
-            </Paragraph>
+            <LibraryLink to="/sorter">
+                <SolidButton title="Till sorter" />
+            </LibraryLink>
         </Section>
         <Section>
             <Row>
                 <Column>
-                    <Heading2>Lite länkar</Heading2>
+                    <Heading2>Länkar och tips</Heading2>
                     <Paragraph>
-                        På{' '}
-                        <Anchor href="https://www.plantagen.se/palettblad.html">
-                            Plantagen
-                        </Anchor>{' '}
-                        finns information om hur du tar hand om dina paletter.
-                    </Paragraph>
-                    <Paragraph>
-                        <Anchor href="https://www.wexthuset.com">
+                        Vill du läsa ännu mer finns ett gäng artiklar på{' '}
+                        <Anchor href="https://www.wexthuset.com/fakta-och-rad/skotselrad-om-vaxter-i-kruka-och-tradgard/beskrivning-av-krukvaxter-odling-och-forokning/">
                             Wexthuset
-                        </Anchor>{' '}
-                        har ett stort utbud av fröer och olika odlingstillbehör.
-                        Där finns också{' '}
-                        <Anchor href="https://www.wexthuset.com/fakta-och-rad/skotselrad-om-vaxter-i-kruka-och-tradgard/beskrivning-av-krukvaxter-odling-och-forokning/skotselrad-sticklingar-palettblad-coleus">
-                            fakta och tips
-                        </Anchor>{' '}
-                        om palettblad.
+                        </Anchor>
+                        . Där finns till exempel tips på bra växter för
+                        nybörjare.
                     </Paragraph>
                     <Paragraph>
-                        På Facebook finns grupper med andra palettbladstokiga.
-                        Där kan du ställa frågor, kanske byta till dig en
-                        stickling, ta del av andras samligar och lära dig
-                        massor! Två stora grupper är{' '}
-                        <Anchor href="https://www.facebook.com/groups/1873268369557231/">
-                            Palettbladsgäris
+                        På Facebook finns grupper med andra krukväxttokiga. Där
+                        kan du ställa frågor, byta sticklingar, ta del av andras
+                        samligar och lära dig massor! En populär grupp är{' '}
+                        <Anchor href="https://www.facebook.com/groups/2368592203365345/">
+                            Krukväxtgäris och -ickebinäris
                         </Anchor>{' '}
-                        (för kvinnor och ickebinära) och{' '}
-                        <Anchor href="https://www.facebook.com/groups/700210806749371/">
-                            Palettblad / Coleus
-                        </Anchor>
-                        .
+                        (för kvinnor och ickebinära).
+                    </Paragraph>
+                    <Paragraph>
+                        <Anchor href="http://krukvaxtpodden.se">
+                            Krukväxtpodden
+                        </Anchor>{' '}
+                        är en podcast där Therese Rosenvinge och Jonna Westin
+                        pratar om krukväxter och svarar på frågor tillsammans
+                        med experter. Ett mysigt sällskap under tiden du pysslar
+                        med växterna!
                     </Paragraph>
                 </Column>
                 <Column>
