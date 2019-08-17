@@ -12,6 +12,7 @@ import { Paragraph } from '../../ui-kit/Paragraph'
 import { SolidButton } from '../../ui-kit/SolidButton'
 import { Html } from '../../ui-kit/Html'
 import SaveToWishlist from './SaveToWishList'
+import Factbox from './Factbox'
 
 const ImageContainer = styled.div`
     display: flex;
@@ -50,6 +51,14 @@ const ContributeText = styled.span`
     margin: 0 0 32px;
 `
 
+const FloatingSection = styled(Section)`
+    float: right;
+    margin-left: 32px;
+`
+
+const placeholderContent =
+    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'
+
 interface Props {
     data: PlantData
 }
@@ -68,6 +77,9 @@ const PlantArticle = ({ data }: Props) => (
             <UpdatedTitle>Uppdaterad {data.modified}</UpdatedTitle>
             <SaveToWishlist plantId={data.id} />
         </Header>
+        <FloatingSection>
+            <Factbox data={data} />
+        </FloatingSection>
         <Section>
             <Heading2>Kännetecken</Heading2>
             {data.characteristics ? (
@@ -76,12 +88,14 @@ const PlantArticle = ({ data }: Props) => (
                 <Paragraph>Information saknas.</Paragraph>
             )}
         </Section>
-        {data.facts && (
-            <Section>
-                <Heading2>Övrigt</Heading2>
-                <Html content={data.facts} />
-            </Section>
-        )}
+        <Section>
+            <Heading2>Skötselråd</Heading2>
+            <Html content={placeholderContent} />
+        </Section>
+        <Section>
+            <Heading2>Mer om {data.title}</Heading2>
+            <Html content={data.facts || placeholderContent} />
+        </Section>
         <ContributeSection>
             <ContributeContainer>
                 <ContributeText>
