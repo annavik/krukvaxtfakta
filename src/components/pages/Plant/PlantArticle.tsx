@@ -12,7 +12,7 @@ import { Paragraph } from '../../ui-kit/Paragraph'
 import { SolidButton } from '../../ui-kit/SolidButton'
 import { Html } from '../../ui-kit/Html'
 import { Anchor } from '../../ui-kit/Anchor'
-import SaveToWishlist from './SaveToWishList'
+import SaveAsFavourite from './SaveAsFavourite'
 import Factbox from './Factbox'
 
 const ImageContainer = styled.div`
@@ -91,7 +91,7 @@ const PlantArticle = ({ data, data: { image: imageData } }: Props) => (
         <Header>
             <Heading1>{data.name}</Heading1>
             <UpdatedTitle>Uppdaterad {data.modified}</UpdatedTitle>
-            <SaveToWishlist plantId={data.id} />
+            <SaveAsFavourite plantId={data.id} />
         </Header>
         <FloatingSection>
             <Factbox data={data} />

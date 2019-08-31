@@ -7,8 +7,8 @@ import { Footer } from './components/Footer'
 import Home from './components/pages/Home'
 import Library from './components/pages/Library/Library'
 import Plant from './components/pages/Plant/Plant'
-import Wishlist from './components/pages/Wishlist/Wishlist'
 import UnderConstruction from './components/pages/UnderConstruction'
+import ListOfFavourites from './components/pages/ListOfFavourites/ListOfFavourites'
 import NotFound from './components/pages/NotFound'
 
 const Content = styled.div`
@@ -39,8 +39,9 @@ const App: React.FC = () => {
                             exact
                             path="/bidra"
                             component={UnderConstruction}
+                            path="/favoriter"
+                            component={ListOfFavourites}
                         />
-                        <Route exact path="/onskelista" component={Wishlist} />
                         <Route component={NotFound} />
                     </Switch>
                 </Content>

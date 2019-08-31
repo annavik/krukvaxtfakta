@@ -40,8 +40,8 @@ export const TopBar = () => {
                 <TopBarLink to="/bidra">
                     <TopBarLinkText>Bidra</TopBarLinkText>
                 </TopBarLink>
-                <TopBarLink to="/onskelista">
-                    <TopBarLinkText>Önskelista</TopBarLinkText>
+                <TopBarLink to="/favoriter">
+                    <TopBarLinkText>Favoriter</TopBarLinkText>
                 </TopBarLink>
             </Content>
         </Container>

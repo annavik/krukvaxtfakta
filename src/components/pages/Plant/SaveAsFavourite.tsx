@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {
-    Wishlist,
-    getWishlist,
-    isInWishlist,
-    saveToWishlist,
-    removeFromWishlist,
-} from '../../../utils/wishlist'
+    Favourites,
+    getFavourites,
+    isInFavourites,
+    saveToFavourites,
+    removeFromFavourites,
+} from '../../../utils/favourites'
 import { Clickable } from '../../ui-kit/Clickable'
 import { Label } from '../../ui-kit/Label'
 
@@ -17,7 +17,7 @@ const Container = styled.div`
     margin: 0 0 24px;
 `
 
-const WishlistButton = styled(Clickable)`
+const FavouritesButton = styled(Clickable)`
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -40,40 +40,40 @@ interface Props {
     plantId: string
 }
 
-const SaveToWishlist = ({ plantId }: Props) => {
-    const [wishlist, setWishlist] = useState<Wishlist>(getWishlist())
+const SaveAsFavourite = ({ plantId }: Props) => {
+    const [favourites, setFavourites] = useState<Favourites>(getFavourites())
 
-    const inWishList = isInWishlist(plantId, wishlist)
+    const inFavourites = isInFavourites(plantId, favourites)
 
-    if (inWishList) {
+    if (inFavourites) {
         return (
             <Container>
-                <WishlistButton
+                <FavouritesButton
                     onClick={() => {
-                        const updatedWishlist = removeFromWishlist(plantId)
-                        setWishlist(updatedWishlist)
+                        const updatedFavourites = removeFromFavourites(plantId)
+                        setFavourites(updatedFavourites)
                     }}
                 >
-                    <Text>Sparad i önskelista</Text>
+                    <Text>Sparad som favorit</Text>
                     <Image src="/assets/icons/heart-filled.png" />
-                </WishlistButton>
+                </FavouritesButton>
             </Container>
         )
     }
 
     return (
         <Container>
-            <WishlistButton
+            <FavouritesButton
                 onClick={() => {
-                    const updatedWishlist = saveToWishlist(plantId)
-                    setWishlist(updatedWishlist)
+                    const updatedFavourites = saveToFavourites(plantId)
+                    setFavourites(updatedFavourites)
                 }}
             >
-                <Text>Spara i önskelista</Text>
+                <Text>Spara som favorit</Text>
                 <Image src="/assets/icons/heart.png" />
-            </WishlistButton>
+            </FavouritesButton>
         </Container>
     )
 }
 
-export default SaveToWishlist
+export default SaveAsFavourite
