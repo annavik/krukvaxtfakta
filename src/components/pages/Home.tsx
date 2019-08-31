@@ -47,8 +47,8 @@ const Home = () => (
         <Section>
             <Paragraph>
                 Kan du inte få nog av krukväxter? Då har du kommit rätt! Det här
-                är en plats där du kan drömma dig bort bland alla härliga sorter
-                och lära sig mer om hur du bäst tar hand om dina växter.
+                är en plats där du kan drömma dig bort bland olika sorter och
+                lära sig mer om hur du bäst tar hand om dina växter.
             </Paragraph>
             <LibraryLink to="/sorter">
                 <SolidButton title="Till sorter" />

@@ -74,7 +74,7 @@ const Factbox = ({ data }: Props) => {
     const renderDifficulty = () => {
         switch (data.difficulty) {
             case 0:
-                return 'Lätt'
+                return 'Enkel'
             case 1:
                 return 'Medel'
             case 2:
