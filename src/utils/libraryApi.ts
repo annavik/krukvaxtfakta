@@ -1,7 +1,6 @@
 import isomorphicFetch from './isomorphicFetch'
 import { LibraryResponse } from '../types/library'
-
-const apiUrl = 'http://localhost:8888/wp-json/krukvaxtfakta-api/v1/library'
+import { apiUrl } from '../config'
 
 const _read = async () => {
     const { data } = await isomorphicFetch<LibraryResponse>(apiUrl, {
