@@ -18,13 +18,21 @@ const Column = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+`
 
-    :first-child {
-        margin-right: 32px;
+const TextColumn = styled(Column)`
+    margin-right: 32px;
+
+    @media (max-width: 800px) {
+        margin: 0;
     }
+`
 
-    :last-child {
-        margin-left: 32px;
+const ImageColumn = styled(Column)`
+    margin-left: 32px;
+
+    @media (max-width: 800px) {
+        display: none;
     }
 `
 
@@ -56,7 +64,7 @@ const Home = () => (
         </Section>
         <Section>
             <Row>
-                <Column>
+                <TextColumn>
                     <Heading2>Länkar och tips</Heading2>
                     <Paragraph>
                         Vill du läsa ännu mer finns ett gäng artiklar på{' '}
@@ -84,10 +92,10 @@ const Home = () => (
                         med experter. Ett mysigt sällskap under tiden du pysslar
                         med växterna!
                     </Paragraph>
-                </Column>
-                <Column>
+                </TextColumn>
+                <ImageColumn>
                     <Image src="/assets/image-01.png" />
-                </Column>
+                </ImageColumn>
             </Row>
         </Section>
     </>
