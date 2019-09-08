@@ -26,7 +26,7 @@ const ListOfFavourites = () => {
     })
 
     const renderContent = () => {
-        if (favourites.length === 0) {
+        if (plants.length === 0) {
             return (
                 <>
                     <Message title="Inga sorter sparade." />

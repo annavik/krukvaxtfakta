@@ -4,17 +4,19 @@ import { Link } from 'react-router-dom'
 import { PlantData, Group } from '../../../types/library'
 import { PlantListItem } from './PlantListItem'
 
-const Row = styled.div`
-    display: flex;
-    text-align: center;
-    margin-bottom: 64px;
+const Items = styled.div`
+    margin: -16px;
+    text-align: left;
 `
 
 const ArticleLink = styled(Link)`
-    flex: 1;
+    display: inline-block;
+    width: calc(${100 / 3}% - 32px);
+    box-sizing: content-box;
+    margin: 16px;
 
-    :last-child {
-        margin-right: 0;
+    @media (max-width: 800px) {
+        width: calc(${100 / 2}% - 32px);
     }
 `
 
@@ -25,46 +27,30 @@ interface Props {
 }
 
 const PlantList = ({ plants, searchValue, groupFilter }: Props) => {
-    const renderItems = () => {
-        const itemsPerRow = 3
+    let filtered = plants
 
-        let filtered = plants
-
-        if (searchValue) {
-            filtered = filtered.filter(plant =>
-                plant.name.toLowerCase().includes(searchValue.toLowerCase())
-            )
-        }
-
-        if (groupFilter) {
-            filtered = plants.filter(
-                plant => plant.groups.indexOf(groupFilter) !== -1
-            )
-        }
-
-        const items = filtered.map(plant => {
-            return (
-                <ArticleLink
-                    key={`plant-${plant.id}`}
-                    to={`/sort/${plant.id}/${plant.slug}`}
-                >
-                    <PlantListItem data={plant} />
-                </ArticleLink>
-            )
-        })
-
-        let rows: JSX.Element[] = []
-
-        for (let i = 0, j = items.length; i < j; i += itemsPerRow) {
-            const rowItems = items.slice(i, i + itemsPerRow)
-
-            rows = [...rows, <Row key={`row-${i}`}>{rowItems}</Row>]
-        }
-
-        return rows
+    if (searchValue) {
+        filtered = filtered.filter(plant =>
+            plant.name.toLowerCase().includes(searchValue.toLowerCase())
+        )
     }
 
-    return <>{renderItems()}</>
+    if (groupFilter) {
+        filtered = plants.filter(
+            plant => plant.groups.indexOf(groupFilter) !== -1
+        )
+    }
+
+    const items = filtered.map(plant => (
+        <ArticleLink
+            key={`plant-${plant.id}`}
+            to={`/sort/${plant.id}/${plant.slug}`}
+        >
+            <PlantListItem data={plant} />
+        </ArticleLink>
+    ))
+
+    return <Items>{items}</Items>
 }
 
 export default PlantList

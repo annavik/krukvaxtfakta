@@ -62,10 +62,12 @@ const ContributeText = styled.span`
 const FloatingSection = styled(Section)`
     float: right;
     margin-left: 32px;
-`
 
-const placeholderContent =
-    '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>'
+    @media (max-width: 800px) {
+        float: none;
+        margin-left: 0;
+    }
+`
 
 interface Props {
     data: PlantData
@@ -106,12 +108,18 @@ const PlantArticle = ({ data, data: { image: imageData } }: Props) => (
         </Section>
         <Section>
             <Heading2>Skötselråd</Heading2>
-            <Html content={placeholderContent} />
+            {data.care ? (
+                <Html content={data.care} />
+            ) : (
+                <Paragraph>Information saknas.</Paragraph>
+            )}
         </Section>
-        <Section>
-            <Heading2>Mer om {data.name}</Heading2>
-            <Html content={data.facts || placeholderContent} />
-        </Section>
+        {data.facts && (
+            <Section>
+                <Heading2>Mer om {data.name}</Heading2>
+                <Html content={data.facts} />
+            </Section>
+        )}
         <ContributeSection>
             <ContributeContainer>
                 <ContributeText>

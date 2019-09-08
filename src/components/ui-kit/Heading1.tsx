@@ -5,4 +5,8 @@ export const Heading1 = styled.h1`
     line-height: 120%;
     font-weight: 600;
     margin: 0 0 16px;
+
+    @media (max-width: 800px) {
+        font-size: 36px;
+    }
 `

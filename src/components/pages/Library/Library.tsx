@@ -20,17 +20,34 @@ const Content = styled.div`
 const SearchContainer = styled.div`
     display: flex;
     margin-bottom: 64px;
+
+    @media (max-width: 800px) {
+        margin-bottom: 32px;
+        flex-direction: column;
+    }
 `
 
 const Column = styled.div`
     flex: 1;
 
     :first-child {
-        margin-right: 16px;
+        margin: 0 16px 0 0;
     }
 
     :last-child {
-        margin-left: 16px;
+        margin: 0 16px 0 0;
+    }
+
+    @media (max-width: 800px) {
+        margin: 0;
+
+        :first-child {
+            margin: 0 0 16px;
+        }
+
+        :last-child {
+            margin: 0;
+        }
     }
 `
 

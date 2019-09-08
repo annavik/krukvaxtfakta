@@ -9,23 +9,39 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-    width: 700px;
+    width: 800px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 64px 32px;
+
+    @media (max-width: 800px) {
+        width: 100%;
+        flex-direction: column;
+        padding: 32px 16px;
+        text-align: center;
+    }
 `
 
 const Image = styled.img`
     display: block;
     vertical-align: middle;
     height: 96px;
-    margin-right: 32px;
+    margin: 0 32px 0 0;
+
+    @media (max-width: 800px) {
+        height: 48px;
+        margin: 0 0 32px;
+    }
 `
 
 const Info = styled.div`
     margin-left: 32px;
+
+    @media (max-width: 800px) {
+        margin-left: 0;
+    }
 `
 
 const InfoText = styled(Label)`

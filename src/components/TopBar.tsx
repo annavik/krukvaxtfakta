@@ -10,12 +10,17 @@ const Container = styled.div`
 `
 
 const Content = styled.div`
-    width: 700px;
+    width: 800px;
     height: 64px;
     margin: 0 auto;
     display: flex;
     align-items: center;
     padding: 0 32px;
+
+    @media (max-width: 800px) {
+        width: 100%;
+        padding: 0 16px;
+    }
 `
 
 const TopBarLink = styled(Link)`

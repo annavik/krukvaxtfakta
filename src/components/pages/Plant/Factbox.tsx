@@ -10,6 +10,11 @@ const Container = styled.div`
     padding: 32px;
     background: ${colors.lightGray};
     border-radius: 4px;
+
+    @media (max-width: 800px) {
+        display: flex;
+        padding: 16px;
+    }
 `
 
 const Column = styled.div`

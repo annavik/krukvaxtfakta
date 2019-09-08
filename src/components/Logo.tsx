@@ -6,6 +6,10 @@ const Container = styled.div`
     display: flex;
     align-items: center;
     margin: 0 48px 0 0;
+
+    @media (max-width: 800px) {
+        margin: 0 32px 0 0;
+    }
 `
 
 const LogoImage = styled.img`
@@ -14,10 +18,18 @@ const LogoImage = styled.img`
     width: 32px;
     height: 32px;
     margin-right: 16px;
+
+    @media (max-width: 800px) {
+        margin-right: 0;
+    }
 `
 
 const LogoText = styled(Heading3)`
     margin: 0;
+
+    @media (max-width: 800px) {
+        display: none;
+    }
 `
 
 export const Logo = () => {

@@ -12,10 +12,15 @@ import ListOfFavourites from './components/pages/ListOfFavourites/ListOfFavourit
 import NotFound from './components/pages/NotFound'
 
 const Content = styled.div`
-    width: 700px;
+    width: 800px;
     min-height: 320px;
     margin: 0 auto;
     padding: 64px 32px;
+
+    @media (max-width: 800px) {
+        width: 100%;
+        padding: 32px 16px;
+    }
 `
 
 const App: React.FC = () => {

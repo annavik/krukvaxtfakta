@@ -6,6 +6,10 @@ import { SolidButton } from '../../ui-kit/SolidButton'
 const Container = styled.div`
     text-align: center;
     margin: 128px 0;
+
+    @media (max-width: 800px) {
+        margin: 64px 0;
+    }
 `
 
 const ToLibrary = () => (

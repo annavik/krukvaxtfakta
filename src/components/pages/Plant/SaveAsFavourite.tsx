@@ -15,6 +15,11 @@ const Container = styled.div`
     bottom: 0;
     right: 0;
     margin: 0 0 24px;
+
+    @media (max-width: 800px) {
+        position: static;
+        display: inline-block;
+    }
 `
 
 const FavouritesButton = styled(Clickable)`

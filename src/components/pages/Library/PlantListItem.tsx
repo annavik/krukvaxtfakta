@@ -23,10 +23,22 @@ const ItemImage = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @media (max-width: 800px) {
+        width: 96px;
+        height: 96px;
+    }
 `
 
 const PlaceholderImage = styled(ItemImage)`
     background-size: 48px;
+`
+
+const ItemLabel = styled(Label)`
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
 `
 
 interface Props {
@@ -43,7 +55,7 @@ export const PlantListItem = ({ data }: Props) => {
     return (
         <Container>
             {image}
-            <Label>{data.name}</Label>
+            <ItemLabel>{data.name}</ItemLabel>
         </Container>
     )
 }
